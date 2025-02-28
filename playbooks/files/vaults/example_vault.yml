@@ -1,0 +1,34 @@
+# My default password for others
+default_passwd: PASSWORD
+
+redhat_username: USERNAME
+redhat_passwd: PASSWORD
+
+# Default Windows Server Credentials
+ddw_password: PASSWORD
+ddw_username: ec2-user
+
+# ServiceNow Credentials
+snow_url: https://ven07621.service-now.com
+snow_username: USERNAME
+servicenow_passwd: PASSWORD
+
+# RHDP service AWS Blank Open Environment pvwk8
+aws_access_key: xxxxx
+aws_secret_key: yyyyy
+
+# My Laptop key
+ssh_priv_key: |
+ -----BEGIN RSA PRIVATE KEY-----
+ -----END RSA PRIVATE KEY-----
+
+dyna_key: 123456_my_secret_key_is_here
+
+# My vault password
+vault_passwd: PASSWORD
+
+red_hat_auto_hub_token: |
+ TOKEN_GOES HERE
+
+my_ctrl_username: admin
+my_ctrl_admin_password: PASSWORD

@@ -6,7 +6,7 @@
     my_organization: "AmesCO"
     my_aap_url: "https://aap.kona.services"
     my_aap_credential: "aap.kona.services"
-    my_vault: "ames"
+    my_vault: ames
 
     # There is a bug in the infra.aap_configuration that causes the need for thing
     # When bug https://issues.redhat.com/browse/AAP-39349 this section can go away

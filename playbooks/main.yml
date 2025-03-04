@@ -47,7 +47,7 @@
 
     - name: Include my vaults
       ansible.builtin.include_vars:
-        dir: files/vaults/"{{ my_vault }}"
+        dir: files/vaults/{{ my_vault }}
 
     - name: Do stuff
       vars:

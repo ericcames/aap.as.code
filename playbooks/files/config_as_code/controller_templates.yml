@@ -50,3 +50,20 @@ controller_templates:
       my_rh_aap_credential: "{{ my_aap_credential }}"
       my_aws_credential: AWS Blank Open Environment pvwk8
       aap_configuration_async_retries: 60
+
+  - name: Satellite Setup
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: Default execution environment
+    project: aap.dailydemo.satellite
+    playbook: playbooks/setup_demo.yml
+    credentials:
+      - "{{ my_aap_credential }}"
+      - "Eric Ames"
+    extra_vars:
+      my_organization: "{{ my_organization }}"
+      my_vault: Eric Ames
+      my_rh_aap_credential: "{{ my_aap_credential }}"
+      my_aws_credential: AWS Blank Open Environment pvwk8
+      aap_configuration_async_retries: 60

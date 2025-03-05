@@ -12,11 +12,11 @@
     # When bug https://issues.redhat.com/browse/AAP-39349 this section can go away
     # We will need to uncomment the token sections below
     # Mapping red hat automation platform controller credential to infra.aap_configuration collection
-    aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
-    aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
-    aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
-    aap_validate_certs: "{{ lookup('ansible.builtin.env', 'CONTROLLER_VERIFY_SSL') }}"
-    aap_token: "{{ lookup('ansible.builtin.env', 'CONTROLLER_OAUTH_TOKEN') }}"
+    # aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+    # aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+    # aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
+    # aap_validate_certs: "{{ lookup('ansible.builtin.env', 'CONTROLLER_VERIFY_SSL') }}"
+    # aap_token: "{{ lookup('ansible.builtin.env', 'CONTROLLER_OAUTH_TOKEN') }}"
 
   tasks:
 
@@ -31,38 +31,39 @@
           - "Red Hat Ansible Automation Platform credential is not set"
           - "Please assign correct credentials to the Job Template"
 
-    # - name: Create a new token using username and password
-    #   ansible.controller.token:
-    #     controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}:8443"
-    #     controller_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
-    #     controller_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
-    #     validate_certs: false
-    #     description: AAP Setup
-    #     scope: write
-    #     state: present
+    - name: Create a new token using username and password
+      ansible.controller.token:
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}:8443"
+        controller_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+        controller_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
+        validate_certs: false
+        description: AAP Setup
+        scope: write
+        state: present
 
     - name: Include configurations
       ansible.builtin.include_vars:
         dir: files/config_as_code
 
     - name: Grab vault from remote url
+      when: 'remotevault is true'
       ansible.builtin.get_url:
         url: '{{ my_vault }}'
         dest: files/vaults/remotevault.yml
         mode: '0644'
-      when: 'remotevault is true'
+
     - name: Include my Remote vault
+      when: 'remotevault is true'
       ansible.builtin.include_vars:
         dir: files/vaults
         files_matching: remotevault.yml
-      when: 'remotevault is true'
+
     - name: Include my vault
+      when: 'remotevault is not defined'
       ansible.builtin.include_vars:
         dir: files/vaults
         files_matching: "{{ my_vault }}"
-      when: 'remotevault is not defined'
 
- 
     - name: Do stuff
       vars:
         meta_dependency_check: false  # noqa: var-naming[no-role-prefix]
@@ -74,10 +75,10 @@
       ansible.builtin.debug:
         msg: "{{ user_message }}"
 
-    # - name: Remove my token
-    #   ansible.controller.token:
-    #     controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}:8443"
-    #     controller_oauthtoken: "{{ controller_token }}"
-    #     existing_token: "{{ controller_token }}"
-    #     validate_certs: false
-    #     state: absent
+    - name: Remove my token
+      ansible.controller.token:
+        controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}:8443"
+        controller_oauthtoken: "{{ controller_token }}"
+        existing_token: "{{ controller_token }}"
+        validate_certs: false
+        state: absent

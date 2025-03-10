@@ -20,7 +20,7 @@ controller_templates:
       timezone_id: America/Phoenix
       aap_configuration_async_retries: 60
 
-  - name: Setup - F5 Daily Demo - CAC
+  - name: Setup - f5 Daily Demo - CAC
     job_type: run
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"
@@ -37,7 +37,7 @@ controller_templates:
       my_aws_credential: AWS Blank Open Environment pvwk8
       aap_configuration_async_retries: 60
 
-  - name: Panos Setup
+  - name: Setup - Panos Daily Demo - CAC
     job_type: run
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"
@@ -54,7 +54,7 @@ controller_templates:
       my_aws_credential: AWS Blank Open Environment pvwk8
       aap_configuration_async_retries: 60
 
-  - name: Setup windows demo
+  - name: Setup - Windows Daily Demo - CAC
     job_type: run
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"
@@ -71,7 +71,7 @@ controller_templates:
       my_aws_credential: AWS Blank Open Environment pvwk8
       aap_configuration_async_retries: 60
 
-  - name: Satellite Setup
+  - name: Setup - Satellite Daily Demo - CAC
     job_type: run
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"

@@ -22,6 +22,7 @@
 
     # Determine the gateway version
     - name: Show the version of the gateway
+      changed_when: false
       register: gateway_version
       ansible.builtin.command: python3.11 -c "import aap_gateway_api; print(aap_gateway_api.__version__)"
 

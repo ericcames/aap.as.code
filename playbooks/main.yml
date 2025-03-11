@@ -20,16 +20,6 @@
 
   tasks:
 
-    # Determine the gateway version
-    - name: Show the version of the gateway
-      changed_when: false
-      register: gateway_version
-      ansible.builtin.command: python3.11 -c "import aap_gateway_api; print(aap_gateway_api.__version__)"
-
-    - name: Print out the gateway_version
-      ansible.builtin.debug:
-        var: gateway_version
-
     # fail with good error for Automation controller user
     - name: Determine that red hat automation platform credential exists
       ansible.builtin.assert:

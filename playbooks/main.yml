@@ -46,23 +46,24 @@
         dir: files/config_as_code
 
     - name: Grab vault from remote url
+      when: 'remotevault is true'
       ansible.builtin.get_url:
         url: '{{ my_vault }}'
         dest: files/vaults/remotevault.yml
         mode: '0644'
-      when: 'remotevault is true'
+
     - name: Include my Remote vault
+      when: 'remotevault is true'
       ansible.builtin.include_vars:
         dir: files/vaults
         files_matching: remotevault.yml
-      when: 'remotevault is true'
+
     - name: Include my vault
+      when: 'remotevault is not defined'
       ansible.builtin.include_vars:
         dir: files/vaults
         files_matching: "{{ my_vault }}"
-      when: 'remotevault is not defined'
 
- 
     - name: Do stuff
       vars:
         meta_dependency_check: false  # noqa: var-naming[no-role-prefix]

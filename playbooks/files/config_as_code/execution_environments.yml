@@ -4,4 +4,4 @@ controller_execution_environments:
     image: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8
     pull: missing
     organization: "{{ my_organization }}"
-    credential: registry.redhat.io - Ames
+    credential: registry.redhat.io

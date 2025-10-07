@@ -14,8 +14,8 @@ controller_templates:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
       my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
-      my_aws_machine_credential: AWS Machine Credential - Ames
+      my_aws_credential: AWS
+      my_aws_machine_credential: AWS Machine Credential
       my_sat_credential: sat.kona.services
       timezone_id: America/Phoenix
       aap_configuration_async_retries: 60
@@ -34,7 +34,7 @@ controller_templates:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
       my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
+      my_aws_credential: AWS
       aap_configuration_async_retries: 60
 
   - name: Setup - Panos Daily Demo - CAC
@@ -51,7 +51,7 @@ controller_templates:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
       my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
+      my_aws_credential: AWS
       aap_configuration_async_retries: 60
 
   - name: Setup - Windows Daily Demo - CAC
@@ -68,7 +68,7 @@ controller_templates:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
       my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
+      my_aws_credential: AWS
       aap_configuration_async_retries: 60
 
   - name: Setup - Satellite Daily Demo - CAC
@@ -85,5 +85,5 @@ controller_templates:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
       my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
+      my_aws_credential: AWS
       aap_configuration_async_retries: 60

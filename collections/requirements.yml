@@ -5,7 +5,7 @@ collections:
   - name: ansible.utils
     version: 6.0.0
   - name: ansible.platform
-    version: 2.5.20250924
+    version: 2.6.20250924
   - name: ansible.hub
     version: 1.0.2
   - name: ansible.controller

@@ -9,7 +9,7 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - Vault - {{ aap_username }}
+      - "{{ my_vault ))"
     extra_vars:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
@@ -29,7 +29,7 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - Vault - {{ aap_username }}
+      - "{{ my_vault ))"
     extra_vars:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
@@ -46,7 +46,7 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - Vault - {{ aap_username }}
+      - "{{ my_vault ))"
     extra_vars:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
@@ -63,7 +63,7 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - Vault - {{ aap_username }}
+      - "{{ my_vault ))"
     extra_vars:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames
@@ -80,7 +80,7 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - Vault - {{ aap_username }}
+      - "{{ my_vault ))"
     extra_vars:
       my_organization: "{{ my_organization }}"
       my_vault: Eric Ames

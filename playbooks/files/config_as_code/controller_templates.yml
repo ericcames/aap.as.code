@@ -16,3 +16,37 @@ controller_templates:
       my_aap_credential: "{{ my_aap_credential }}"
       my_aws_credential: AWS
       aap_configuration_async_retries: 60
+
+  - name: Setup - f5 Daily Demo - CAC
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: ansible-automation-platform-24/ee-supported-rhel8
+    project: aap.dailydemo.F5
+    playbook: playbooks/setup_demo.yml
+    credentials:
+      - "{{ my_aap_credential }}"
+      - "{{ my_vault }}"
+    extra_vars:
+      my_organization: "{{ my_organization }}"
+      my_vault: Eric Ames
+      my_rh_aap_credential: "{{ my_aap_credential }}"
+      my_aws_credential: AWS
+      aap_configuration_async_retries: 60
+
+  - name: Setup - Panos Daily Demo - CAC
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: ansible-automation-platform-24/ee-supported-rhel8
+    project: aap.dailydemo.Panos
+    playbook: playbooks/setup_demo.yml
+    credentials:
+      - "{{ my_aap_credential }}"
+      - "{{ my_vault }}"
+    extra_vars:
+      my_organization: "{{ my_organization }}"
+      my_vault: Eric Ames
+      my_rh_aap_credential: "{{ my_aap_credential }}"
+      my_aws_credential: AWS
+      aap_configuration_async_retries: 60

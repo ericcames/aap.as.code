@@ -51,11 +51,6 @@
       ansible.builtin.include_vars:
         dir: files/config_as_code
 
-    # - name: Include my Remote vault
-    #   ansible.builtin.include_vars:
-    #     dir: files/config_as_code
-    #     files_matching: remotevault.yml
-
     - name: Do stuff
       vars:
         meta_dependency_check: false  # noqa: var-naming[no-role-prefix]

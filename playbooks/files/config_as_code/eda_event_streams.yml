@@ -2,6 +2,6 @@
 eda_event_streams:
   - name: ServiceNow Event Stream
     credential_name: ServiceNow Event Stream
-    organization: AmesCO
+    organization: "{{ my_organization }}"
     event_stream_type: snow
     forward_events: true

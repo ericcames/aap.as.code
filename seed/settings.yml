@@ -1,9 +1,0 @@
----
-controller_settings:
-  settings:
-    CUSTOM_LOGIN_INFO: "THIS SYSTEM IS PROVIDED FOR USE BY AUTHORIZED USERS ONLY.\n\n\nALERT! You are entering into a secured area! Your IP,  Login Time, Username has been noted and has been sent to the server administrator! All activities on this system are logged.  Unauthorized access will be fully investigated and reported to the appropriate law         enforcement agencies."
-    REDHAT_USERNAME: "{{ redhat_username }}"
-    REDHAT_PASSWORD: "{{ redhat_passwd }}"
-    INSIGHTS_TRACKING_STATE: true
-    ANSIBLE_FACT_CACHE_TIMEOUT: 86400
-    ALLOW_OAUTH2_FOR_EXTERNAL_USERS: true

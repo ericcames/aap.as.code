@@ -3,10 +3,10 @@
   gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    my_organization: "AmesCO"
+    my_organization: ""
     my_aap_url: ""
     my_aap_credential: ""
-    my_vault: ames
+    my_remote_vault: ""
 
     # There is a bug in the infra.aap_configuration that causes the need for thing
     # When bug https://issues.redhat.com/browse/AAP-39349 this section can go away
@@ -41,28 +41,20 @@
     #     scope: write
     #     state: present
 
+    - name: Grab vault from remote url
+      ansible.builtin.get_url:
+        url: '{{ my_remote_vault }}'
+        dest: files/config_as_code/remotevault.yml
+        mode: '0644'
+
     - name: Include configurations
       ansible.builtin.include_vars:
         dir: files/config_as_code
 
-    - name: Grab vault from remote url
-      when: 'remotevault is true'
-      ansible.builtin.get_url:
-        url: '{{ my_vault }}'
-        dest: files/vaults/remotevault.yml
-        mode: '0644'
-
-    - name: Include my Remote vault
-      when: 'remotevault is true'
-      ansible.builtin.include_vars:
-        dir: files/vaults
-        files_matching: remotevault.yml
-
-    - name: Include my vault
-      when: 'remotevault is not defined'
-      ansible.builtin.include_vars:
-        dir: files/vaults
-        files_matching: "{{ my_vault }}"
+    # - name: Include my Remote vault
+    #   ansible.builtin.include_vars:
+    #     dir: files/config_as_code
+    #     files_matching: remotevault.yml
 
     - name: Do stuff
       vars:

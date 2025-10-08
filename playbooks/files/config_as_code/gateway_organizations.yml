@@ -1,7 +1,30 @@
 ---
 aap_organizations:
   - name: "{{ my_organization }}"
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
   - name: LowcherCO
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
   - name: GilbertCO
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
   - name: HinsonCO
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
   - name: LeblancCO
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy

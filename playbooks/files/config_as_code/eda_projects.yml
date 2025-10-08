@@ -1,0 +1,7 @@
+---
+eda_projects:
+  - name: event.driven.ansible
+    description: my awesome project
+    url: https://github.com/ericcames/event.driven.ansible.git
+    organization: "{{ my_organization }}"
+    tls_validation: true

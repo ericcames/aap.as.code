@@ -22,5 +22,23 @@ This repo is designed to work with the Ansible Product Demos catalog item availa
     - Credential type - Ansible Galaxy/Automation Hub API Token
 
 2. Ensure the Galaxy credentials are related to the Default Organization
-
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/orgswithcreds.png "Default Organization")
+
+3. Create your vault credential
+![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/myvault.png "Vault")
+
+4. Create your project
+![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/project.png "aap.as.code")
+
+5. Create your job template
+![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/template.png "Setup - AAP - CAC")
+
+Extra variables
+```
+aap_configuration_async_retries: 60
+controller_configuration_settings_secure_logging: true
+my_aap_url: https://aap-aap.apps.cluster-wzl4x-1.dynamic.redhatworkshops.io
+my_aap_credential: Controller Credential
+my_vault: Eric Ames
+redhat_username: 0e9c9d22-8898-4079-80d1-5e47e5cb3684
+```

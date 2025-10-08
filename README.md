@@ -30,7 +30,11 @@ This repo is designed to work with the Ansible Product Demos catalog item availa
 4. Create your project
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/project.png "aap.as.code")
 
-5. Create your job template
+5. Create a remote vault with your secrets
+[Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>
+[Example Vault](https://github.com/ericcames/sourcefiles/blob/main/vault_example.yml "vault_example.yml")<br>
+
+6. Create your job template
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/template.png "Setup - AAP - CAC")
 
 Extra variables
@@ -38,7 +42,9 @@ Extra variables
 aap_configuration_async_retries: 60
 controller_configuration_settings_secure_logging: true
 my_aap_url: https://aap-aap.apps.cluster-wzl4x-1.dynamic.redhatworkshops.io
+my_organization: AmesCO
 my_aap_credential: Controller Credential
 my_vault: Eric Ames
-redhat_username: 0e9c9d22-8898-4079-80d1-5e47e5cb3684
+my_remote_vault: >-
+  https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml
 ```

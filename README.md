@@ -31,6 +31,7 @@ This repo is designed to work with the Ansible Product Demos catalog item availa
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/project.png "aap.as.code")
 
 5. Create a remote vault with your secrets
+
 [Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>
 [Example Vault](https://github.com/ericcames/sourcefiles/blob/main/vault_example.yml "vault_example.yml")<br>
 

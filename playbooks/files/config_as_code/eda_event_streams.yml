@@ -4,3 +4,4 @@ eda_event_streams:
     credential_name: ServiceNow Event Stream
     organization: AmesCO
     event_stream_type: snow
+    forward_events: true

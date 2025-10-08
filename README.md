@@ -14,6 +14,7 @@ This repo is designed to work with the Ansible Product Demos catalog item availa
     - Galaxy Server URL - https://console.redhat.com/api/automation-hub/content/published/
     - Auth Server URL - https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
     - Credential type - Ansible Galaxy/Automation Hub API Token
+![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/AHcertified.png "certified")
 
     - Automation Hub - validated
     - Galaxy Server URL - https://console.redhat.com/api/automation-hub/content/validated/

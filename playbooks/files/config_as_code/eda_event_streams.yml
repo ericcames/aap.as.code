@@ -1,0 +1,6 @@
+---
+eda_event_streams:
+  - name: ServiceNow Event Stream
+    credential_name: ServiceNow Event Stream
+    organization: AmesCO
+    event_stream_type: snow

@@ -8,5 +8,4 @@ eda_rulebook_activations:
     decision_environment: Default Decision Environment
     event_streams: ServiceNow Event Stream
     eda_credentials: Controller Credential
-    enabled: true
     state: present

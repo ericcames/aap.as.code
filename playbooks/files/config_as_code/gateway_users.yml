@@ -85,3 +85,35 @@ aap_user_accounts:
    first_name: Andy
    last_name: Garrett
    update_secrets: false
+
+ - username: dasimmon
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: dasimmon@redhat.com
+   first_name: Dan
+   last_name: Simmons
+   update_secrets: false
+
+ - username: jason.horn
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: jason.horn@redhat.com
+   first_name: Jason
+   last_name: Horn
+   update_secrets: false
+
+ - username: mhooper
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: mhooper@redhat.com
+   first_name: Mark
+   last_name: Hooper
+   update_secrets: false
+
+ - username: sazed
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: sazed@redhat.com
+   first_name: Sohaib
+   last_name: Azed
+   update_secrets: false

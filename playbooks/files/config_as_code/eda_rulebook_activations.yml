@@ -1,0 +1,12 @@
+---
+eda_rulebook_activations:
+  - name: Catch Servicenow Events
+    description: Hook to listen for changes in ServiceNow
+    project: event.driven.ansible
+    organization: "{{ my_organization }}"
+    rulebook: servicenow/servicenow_events.yml
+    decision_environment: Default Decision Environment
+    event_streams: ServiceNow Event Stream
+    eda_credentials: Controller Credential
+    enabled: true
+    state: present

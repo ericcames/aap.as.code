@@ -10,6 +10,7 @@
     aap_configuration_async_retries: 60
     controller_configuration_settings_secure_logging: true
     my_vault: ""
+    github_username: ""
 
 
     # There is a bug in the infra.aap_configuration that causes the need for thing

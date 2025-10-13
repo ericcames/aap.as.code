@@ -7,6 +7,6 @@ eda_rulebook_activations:
     rulebook: servicenow/servicenow_events.yml
     decision_environment: Default Decision Environment
     event_streams:
-      - ServiceNow Event Stream
+      name: ServiceNow Event Stream
     eda_credentials: Controller Credential
     state: present

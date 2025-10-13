@@ -49,11 +49,7 @@ Looking for other Daily Demos?
 
 Extra variables
 ```
-aap_configuration_async_retries: 60
-controller_configuration_settings_secure_logging: true
 my_aap_url: https://aap-aap.apps.cluster-wzl4x-1.dynamic.redhatworkshops.io
-my_organization: IT Service Automation
-my_aap_credential: Controller Credential
 my_vault: Eric Ames
 my_remote_vault: >-
   https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml

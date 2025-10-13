@@ -44,7 +44,8 @@ Looking for other Daily Demos?
 [Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>
 [Example Vault](https://github.com/ericcames/sourcefiles/blob/main/vault_example.yml "vault_example.yml")<br>
 
-6. Fork the following repo https://github.com/ericcames/event.driven.ansible
+6. Fork the following repo
+   https://github.com/ericcames/event.driven.ansible
 
 7. Create your job template
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/template.png "Setup - AAP - CAC")

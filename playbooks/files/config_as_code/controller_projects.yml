@@ -30,7 +30,7 @@ controller_projects:
   scm_delete_on_update: 'no'
   scm_type: git
   scm_update_on_launch: 'no'
-  scm_url: https://github.com/ericcames/event.driven.ansible.git
+  scm_url: "https://github.com/{{ github_username }}/event.driven.ansible.git"
 
 - name: aap.dailydemo.linux
   organization: "{{ my_organization }}"

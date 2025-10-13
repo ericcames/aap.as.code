@@ -3,9 +3,9 @@
   gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    my_organization: ""
+    my_organization: "IT Service Automation"
     my_aap_url: ""
-    my_aap_credential: ""
+    my_aap_credential: "Controller Credential"
     my_remote_vault: ""
 
     # There is a bug in the infra.aap_configuration that causes the need for thing

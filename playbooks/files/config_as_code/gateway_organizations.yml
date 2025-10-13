@@ -6,24 +6,31 @@ aap_organizations:
       - Automation Hub - validated
       - Ansible Galaxy
 
-  - name: LowcherCO
-    galaxy_credentials:
-      - Automation Hub - certified
-      - Automation Hub - validated
-      - Ansible Galaxy
-  - name: GilbertCO
+  - name: Network
     galaxy_credentials:
       - Automation Hub - certified
       - Automation Hub - validated
       - Ansible Galaxy
 
-  - name: HinsonCO
+  - name: Storage
     galaxy_credentials:
       - Automation Hub - certified
       - Automation Hub - validated
       - Ansible Galaxy
 
-  - name: LeblancCO
+  - name: Online Shopping
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
+  - name: Data Center Operations
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
+  - name: Security Operations Center
     galaxy_credentials:
       - Automation Hub - certified
       - Automation Hub - validated

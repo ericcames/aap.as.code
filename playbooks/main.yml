@@ -13,15 +13,15 @@
     github_username: ""
 
 
-    # There is a bug in the infra.aap_configuration that causes the need for thing
-    # When bug https://issues.redhat.com/browse/AAP-39349 this section can go away
-    # We will need to uncomment the token sections below
-    # Mapping red hat automation platform controller credential to infra.aap_configuration collection
-    aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
-    aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
-    aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
-    aap_validate_certs: "{{ lookup('ansible.builtin.env', 'CONTROLLER_VERIFY_SSL') }}"
-    aap_token: "{{ lookup('ansible.builtin.env', 'CONTROLLER_OAUTH_TOKEN') }}"
+    # # There is a bug in the infra.aap_configuration that causes the need for thing
+    # # When bug https://issues.redhat.com/browse/AAP-39349 this section can go away
+    # # We will need to uncomment the token sections below
+    # # Mapping red hat automation platform controller credential to infra.aap_configuration collection
+    # aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+    # aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+    # aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
+    # aap_validate_certs: "{{ lookup('ansible.builtin.env', 'CONTROLLER_VERIFY_SSL') }}"
+    # aap_token: "{{ lookup('ansible.builtin.env', 'CONTROLLER_OAUTH_TOKEN') }}"
 
   tasks:
 
@@ -35,6 +35,16 @@
         fail_msg:
           - "Red Hat Ansible Automation Platform credential is not set"
           - "Please assign correct credentials to the Job Template"
+
+    - name: Create a new token
+      ansible.platform.token:
+        aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+        aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+        aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
+        aap_validate_certs: false
+        description: AAP Setup
+        scope: write
+        state: present
 
     # - name: Create a new token using username and password
     #   ansible.controller.token:
@@ -74,3 +84,11 @@
     #     existing_token: "{{ controller_token }}"
     #     validate_certs: false
     #     state: absent
+
+    - name: Remove my token
+      ansible.platform.token:
+        aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+        existing_token: "{{ aap_token }}"
+        aap_token: "{{ aap_token['token'] }}"
+        aap_validate_certs: false
+        state: absent

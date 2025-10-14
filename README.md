@@ -57,6 +57,8 @@ my_aap_url: https://aap-aap.apps.cluster-wzl4x-1.dynamic.redhatworkshops.io
 my_vault: Eric Ames
 my_remote_vault: >-
   https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml
+my_remote_ssh_pub_key: >-
+  https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub
 ```
 **ServiceNow EventDriven Ansible**
 

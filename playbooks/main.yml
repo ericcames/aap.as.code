@@ -8,7 +8,7 @@
     my_aap_credential: "Controller Credential"
     my_remote_vault: ""
     aap_configuration_async_retries: 60
-    controller_configuration_settings_secure_logging: true
+    controller_configuration_settings_secure_logging: false
     my_vault: ""
     github_username: ""
 
@@ -46,16 +46,6 @@
         scope: write
         state: present
 
-    # - name: Create a new token using username and password
-    #   ansible.controller.token:
-    #     controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
-    #     controller_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
-    #     controller_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
-    #     validate_certs: false
-    #     description: AAP Setup
-    #     scope: write
-    #     state: present
-
     - name: Grab vault from remote url
       ansible.builtin.get_url:
         url: '{{ my_remote_vault }}'
@@ -76,14 +66,6 @@
       when: user_message is defined
       ansible.builtin.debug:
         msg: "{{ user_message }}"
-
-    # - name: Remove my token
-    #   ansible.controller.token:
-    #     controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
-    #     controller_oauthtoken: "{{ controller_token }}"
-    #     existing_token: "{{ controller_token }}"
-    #     validate_certs: false
-    #     state: absent
 
     - name: Remove my token
       ansible.platform.token:

@@ -44,10 +44,14 @@ Looking for other Daily Demos?
 [Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>
 [Example Vault](https://github.com/ericcames/sourcefiles/blob/main/vault_example.yml "vault_example.yml")<br>
 
-6. Fork the following [repo](https://github.com/ericcames/event.driven.ansible "event.driven.ansible"). Update the servicenow [rulebook](https://github.com/ericcames/event.driven.ansible/blob/main/rulebooks/servicenow/servicenow_events.yml "servicenow_events.yml") with the short description of your catalog item.<br>
+6. Add your public ssh key to a public repo
+
+[Public SSH Key](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub "Public SSH Key")
+
+7. Fork the following [repo](https://github.com/ericcames/event.driven.ansible "event.driven.ansible"). Update the servicenow [rulebook](https://github.com/ericcames/event.driven.ansible/blob/main/rulebooks/servicenow/servicenow_events.yml "servicenow_events.yml") with the short description of your catalog item.<br>
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/snowshort.png "ServiceNow Catalog Item")
 
-7. Create your job template
+8. Create your job template
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/template.png "Setup - AAP - CAC")
 
 Extra variables

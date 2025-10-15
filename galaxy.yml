@@ -26,6 +26,6 @@ tags:
   - ansible
   - automation
   - sales
-  - Panos
-  - Palo_alto
+  - panos
+  - palo_alto
 version: 1.0.0

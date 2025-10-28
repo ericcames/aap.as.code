@@ -44,7 +44,7 @@ Looking for other Daily Demos?
 [Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>
 [Example Vault](https://github.com/ericcames/sourcefiles/blob/main/vault_example.yml "vault_example.yml")<br>
 
-6. Add your public ssh key to a public repo
+6. Add your public ssh key to a public repo.  Amazon works with RSA keys.
 
 [Public SSH Key](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub "Public SSH Key")
 

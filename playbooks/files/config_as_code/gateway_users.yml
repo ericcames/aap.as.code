@@ -125,3 +125,11 @@ aap_user_accounts:
    first_name: Andrew
    last_name: Schoenfeld
    update_secrets: false
+
+ - username: tcoulter
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: tcoulter@redhat.com
+   first_name: Timothy
+   last_name: Coulter
+   update_secrets: false

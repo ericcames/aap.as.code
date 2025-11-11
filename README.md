@@ -57,7 +57,8 @@ Looking for other Daily Demos?
 Extra variables
 ```
 github_username: ericcames
-my_aap_url: https://aap-aap.apps.cluster-wzl4x-1.dynamic.redhatworkshops.io
+my_aap_url: "GETTHISFROMAPD"
+my_ctrl_admin_password: "GETTHISFROMAPD"
 my_vault: Eric Ames
 my_remote_vault: >-
   https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml

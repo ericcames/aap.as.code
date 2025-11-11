@@ -2,6 +2,6 @@
 eda_decision_environments:
   - name: Default Decision Environment
     description: my default decision environment
-    organization: IT Service Automation
+    organization: "{{ my_organization }}"
     image_url: "registry.redhat.io/ansible-automation-platform-25/de-supported-rhel8:latest"
     credential: registry.redhat.io

@@ -117,3 +117,11 @@ aap_user_accounts:
    first_name: Sohaib
    last_name: Azed
    update_secrets: false
+
+ - username: aschoenfeld
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: aschoenfeld@redhat.com
+   first_name: Andrew
+   last_name: Schoenfeld
+   update_secrets: false

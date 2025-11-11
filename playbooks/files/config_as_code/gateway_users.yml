@@ -121,7 +121,7 @@ aap_user_accounts:
  - username: aschoenfeld
    is_superuser: true
    password: "{{ default_passwd }}"
-   email: aschoenfeld@redhat.com
+   email: aschoenf@redhat.com
    first_name: Andrew
    last_name: Schoenfeld
    update_secrets: false

@@ -12,3 +12,5 @@ eda_rulebook_activations:
         source_name: __SOURCE_1
     eda_credentials: Controller Credential
     state: present
+    extra_vars:
+      my_windows_catalog_short_description: "{{ my_windows_catalog_short_description: }}"

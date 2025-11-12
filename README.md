@@ -48,7 +48,7 @@ Looking for other Daily Demos?
 
 [Public SSH Key](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub "Public SSH Key")
 
-7. Fork the following [repo](https://github.com/ericcames/event.driven.ansible "event.driven.ansible"). Update the servicenow [rulebook](https://github.com/ericcames/event.driven.ansible/blob/main/rulebooks/servicenow/servicenow_events.yml "servicenow_events.yml") with the short description of your catalog item.<br>
+7. Update my_windows_catalog_short_description: Ames AAP Windows AWS Daily Demo with the short description of your catalog item.<br>
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/snowshort.png "ServiceNow Catalog Item")
 
 8. Create your job template
@@ -56,7 +56,7 @@ Looking for other Daily Demos?
 
 Extra variables
 ```
-github_username: ericcames
+my_windows_catalog_short_description: Ames AAP Windows AWS Daily Demo
 my_aap_url: "GETTHISFROMAPD"
 my_ctrl_admin_password: "GETTHISFROMAPD"
 my_vault: Eric Ames

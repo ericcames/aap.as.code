@@ -133,3 +133,11 @@ aap_user_accounts:
    first_name: Timothy
    last_name: Coulter
    update_secrets: false
+
+ - username: cnorvill
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: cnorvill@redhat.com
+   first_name: Christopher
+   last_name: Norville
+   update_secrets: false

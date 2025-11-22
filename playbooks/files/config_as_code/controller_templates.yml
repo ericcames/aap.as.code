@@ -63,3 +63,20 @@ controller_templates:
       my_vault: "{{ my_vault }}"
       my_remote_vault: "{{ my_remote_vault }}"
       my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
+
+  - name: Setup - HashiCorp Daily Demo - CAC
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: hashicorp_ee
+    project: aap.dailydemo.hashicorp
+    playbook: playbooks/setup_demo.yml
+    credentials:
+      - "{{ my_aap_credential }}"
+      - "{{ my_vault }}"
+      - "{{ my_aws_credential }}"
+    extra_vars:
+      my_vault: "{{ my_vault }}"
+      timezone_id: America/Phoenix
+      my_remote_vault: "{{ my_remote_vault }}"
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"

@@ -1,0 +1,10 @@
+---
+hub_collection_repositories:
+  - name: "community"
+    description: "Community content repository"
+    pulp_labels:
+      pipeline: "approved"
+    distribution:
+      name: "community"
+      state: present
+    remote: community

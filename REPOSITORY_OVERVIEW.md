@@ -129,7 +129,7 @@ Check `playbooks/files/config_as_code/eda_*` files for EDA configuration example
 - **docs/architecture.md**: Technical architecture details
 - **docs/development-guide.md**: Developer setup process
 - **docs/deployment-guide.md**: Deployment instructions
-- **doc/**: ServiceNow integration guides (PDFs and external links)
+- **docs/**: ServiceNow integration guides (PDFs and external links)
 
 ## Technology Stack
 

@@ -1,0 +1,130 @@
+# Workflow Status Template
+
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "Sunday, November 23, 2025"
+project: "aap.as.code"
+project_type: "Enterprise Method"
+selected_track: "enterprise-method"
+field_type: "brownfield"
+workflow_path: "/Users/tony/workspace/aap.as.code/.bmad/bmm/workflows/workflow-status/paths/enterprise-brownfield.yaml"
+workflow_status:
+  - name: "Documentation"
+    required: true
+    note: "NOT a phase - prerequisite for brownfield without docs (nearly mandatory for enterprise)"
+    workflows:
+      - id: "document-project"
+        status: "pending"
+        agent: "analyst"
+        command: "document-project"
+        purpose: "Comprehensive project documentation"
+        required: true
+        optional: false
+        recommended: false
+        conditional: "if_undocumented"
+        note: "Understand existing codebase - critical for enterprise brownfield"
+  - phase: 0
+    name: "Discovery (Required)"
+    required: true
+    note: "Analysis phase required for enterprise projects"
+    workflows:
+      - id: "brainstorm-project"
+        status: "pending"
+        optional: true
+        agent: "analyst"
+        command: "brainstorm-project"
+        included_by: "user_choice"
+      - id: "research"
+        status: "pending"
+        recommended: true
+        agent: "analyst"
+        command: "research"
+        included_by: "user_choice"
+        note: "Highly recommended - compliance, integration, risk research"
+      - id: "product-brief"
+        status: "pending"
+        optional: true
+        agent: "analyst"
+        command: "product-brief"
+        included_by: "user_choice"
+        note: "Optional for brownfield enterprise"
+  - phase: 1
+    name: "Planning"
+    required: true
+    workflows:
+      - id: "prd"
+        status: "pending"
+        required: true
+        agent: "pm"
+        command: "prd"
+        purpose: "Enterprise PRD with compliance requirements"
+        note: "Must address existing system constraints and migration strategy"
+      - id: "validate-prd"
+        status: "pending"
+        recommended: true
+        agent: "pm"
+        command: "validate-prd"
+      - id: "create-design"
+        status: "pending"
+        recommended: true
+        agent: "ux-designer"
+        command: "create-design"
+        note: "Recommended - must integrate with existing UX patterns"
+  - phase: 2
+    name: "Solutioning"
+    required: true
+    workflows:
+      - id: "create-architecture"
+        status: "pending"
+        required: true
+        agent: "architect"
+        command: "create-architecture"
+        purpose: "Integration architecture with enterprise considerations"
+        note: "Distills brownfield context + adds security/scalability/compliance design"
+      - id: "create-epics-and-stories"
+        status: "pending"
+        required: true
+        agent: "pm"
+        command: "create-epics-and-stories"
+        note: "Required: Break down PRD into implementable epics and stories with full context (PRD + UX + Architecture)"
+      - id: "test-design"
+        status: "pending"
+        required: true
+        agent: "tea"
+        command: "test-design"
+        purpose: "System-level testability review"
+        note: "Enterprise requires testability validation - auto-detects system-level mode"
+      - id: "validate-architecture"
+        status: "pending"
+        recommended: true
+        agent: "architect"
+        command: "validate-architecture"
+      - id: "implementation-readiness"
+        status: "pending"
+        required: true
+        agent: "architect"
+        command: "implementation-readiness"
+        note: "Critical gate - validates all planning + Epics before touching production system"
+  - phase: 3
+    name: "Implementation"
+    required: true
+    workflows:
+      - id: "sprint-planning"
+        status: "pending"
+        required: true
+        agent: "sm"
+        command: "sprint-planning"
+        note: "Enterprise brownfield requires careful phasing and feature flags"

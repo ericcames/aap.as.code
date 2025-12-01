@@ -628,9 +628,9 @@ These 19 files work as a single declarative blueprint consumed by `playbooks/mai
 **Problems**:
 - Building training environments takes days for a one-off enviorment
 - Inconsistent lab experiences for students
-- Manual IaaS cleanup often neglected resulting in paying for unused services 
+- Manual IaaS cleanup often neglected resulting in paying for unused services
 - Difficultly of building hands-on labs means the best sales tool is radically under utilized
-- Difficult to scale field training programs 
+- Difficult to scale field training programs
 
 **Value Delivered**:
 - Lab environments provisioned in minutes

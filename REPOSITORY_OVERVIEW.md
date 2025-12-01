@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository is an Ansible-based **Infrastructure as Code (IaC)** system designed to automate the setup and management of demo environments on the Red Hat Demo Platform. It serves as the foundation for the Ansible Product Demos catalog item, enabling quick deployment of various automation demonstrations.
+This repository is an Ansible-based **Configuration as Code (CaC)** system designed to automate the setup and management of demo environments on the Red Hat Demo Platform. It serves as the foundation for the Ansible Product Demos catalog item, enabling quick deployment of various automation demonstrations.
 
 ## What This Repository Does
 
@@ -10,7 +10,7 @@ The `aap.as.code` repository:
 
 - **Automates AAP Configuration**: Provisions and configures Ansible Automation Platform (AAP) instances with predefined templates, credentials, inventories, and projects
 - **Enables Demo Orchestration**: Loads setup templates that pull in other specialized demo repositories
-- **Manages Configuration as Code**: Maintains all infrastructure and configuration definitions in version-controlled YAML files
+- **Manages Configuration as Code**: Maintains all configuration definitions in version-controlled YAML files
 - **Integrates ServiceNow & EDA**: Provides Event-Driven Ansible integration with ServiceNow for automated incident response
 
 ## Why This Repository Exists
@@ -24,7 +24,7 @@ Organizations and sales engineers need to quickly spin up working Ansible demons
 
 ## Architecture Pattern
 
-The project follows an **Infrastructure as Code (IaC)** pattern where:
+The project follows an **Configuration as Code (CaC)** pattern where:
 
 - All infrastructure and configuration is defined in code
 - Changes are version-controlled through Git

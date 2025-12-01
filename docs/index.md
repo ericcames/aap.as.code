@@ -3,14 +3,14 @@
 ## Project Overview
 
 - **Type:** monolith
-- **Primary Language:** Not specified
-- **Architecture:** Infrastructure as Code (IaC)
+- **Primary Language:** yaml
+- **Architecture:** Configuration as Code (CaC)
 
 ### Quick Reference
 
 - **Tech Stack:** Ansible
 - **Entry Point:** playbooks/main.yml
-- **Architecture Pattern:** Infrastructure as Code (IaC)
+- **Architecture Pattern:** Configuration as Code (CaC)
 
 ### Generated Documentation
 
@@ -26,11 +26,10 @@
 
 ### Existing Documentation
 
-- [README.md](/Users/tony/workspace/aap.as.code/README.md)
-- [doc/README.md](/Users/tony/workspace/aap.as.code/doc/README.md)
-- [doc/AAP_Servicenow.pdf](/Users/tony/workspace/aap.as.code/doc/AAP_Servicenow.pdf)
-- [doc/Conscience of an Automator Eric Ames.pdf](/Users/tony/workspace/aap.as.code/doc/Conscience of an Automator Eric Ames.pdf)
-- [doc/ServiceNow_EventDriven_Ansible_integration.pdf](/Users/tony/workspace/aap.as.code/doc/ServiceNow_EventDriven_Ansible_integration.pdf)
+- [README.md](README.md)
+- [AAP_Servicenow.pdf](AAP_Servicenow.pdf)
+- [Conscience of an Automator Eric Ames.pdf](./Conscience%20of%20an%20Automator%20Eric%20Ames.pdf)
+- [ServiceNow_EventDriven_Ansible_integration.pdf](./ServiceNow_EventDriven_Ansible_integration.pdf)
 
 ### Getting Started
 

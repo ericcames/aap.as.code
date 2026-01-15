@@ -55,6 +55,11 @@ Looking for other Daily Demos?
 8. Create your job template
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/template.png "Setup - AAP - CAC")
 
+Template name
+```
+Setup - AAP - CAC
+```
+
 Extra variables
 ```
 my_windows_catalog_short_description: Ames AAP Windows AWS Daily Demo

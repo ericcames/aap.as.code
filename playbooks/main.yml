@@ -5,7 +5,7 @@
     ansible_python_interpreter: /usr/bin/python3
     my_organization: "IT Service Automation"
     my_aap_url: ""
-    my_aap_credential: "Controller Credential"
+    my_aap_credential: "AAP Credential"
     my_remote_vault: ""
     aap_configuration_async_retries: 60
     aap_configuration_async_delay: 2

@@ -63,3 +63,11 @@ controller_projects:
   scm_type: git
   scm_update_on_launch: 'no'
   scm_url: https://github.com/ericcames/aap.dailydemo.hashicorp.git
+
+- name: aap.dailydemo.network
+  organization: "{{ my_organization }}"
+  scm_clean: 'no'
+  scm_delete_on_update: 'no'
+  scm_type: git
+  scm_update_on_launch: 'no'
+  scm_url: https://github.com/ericcames/aap.dailydemo.network.git

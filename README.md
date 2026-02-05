@@ -75,4 +75,4 @@ my_remote_ssh_pub_key: >-
 
 Check out the playbooks/files/config_as_code/eda* files to see how much of the SNOW EDA integration is done.  To finish off the integration check out the doc directory for the AAP_Servicenow.pdf.
 
-[AAP ServiceNow Setup](https://github.com/ericcames/aap.as.code/blob/main/doc/AAP_Servicenow.pdf "AAP ServiceNow setup")
+[AAP ServiceNow Setup](https://github.com/ericcames/aap.as.code/blob/main/docs/AAP_Servicenow.pdf "AAP ServiceNow setup")

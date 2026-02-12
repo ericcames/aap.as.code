@@ -4,6 +4,7 @@ controller_inventory_sources:
     organization: "{{ my_organization }}"
     description: AWS running ec2
     inventory: Datacenter 1
+    credential: AWS
     source: ec2
     source_vars:
       plugin: amazon.aws.aws_ec2

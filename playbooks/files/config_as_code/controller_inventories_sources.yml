@@ -1,0 +1,6 @@
+---
+controller_inventories:
+  - name: running
+    organization: "{{ my_organization }}"
+    description: AWS running ec2
+    inventory: Datacenter 1

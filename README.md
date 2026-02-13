@@ -12,6 +12,7 @@ Looking for other Daily Demos?
 - [AAP Daily Demo Panos](https://github.com/ericcames/aap.dailydemo.Panos "AAP Daily Demo Panos") - ready
 - [AAP Daily Demo Satellite](https://github.com/ericcames/aap.dailydemo.satellite "AAP Daily Demo Satellite")
 - [AAP Daily Demo hashicorp](https://github.com/ericcames/aap.dailydemo.hashicorp "AAP Daily Demo hashicorp") - ready
+- [Datacenter 1](https://github.com/ericcames/demo.datacenter "Datacenter 1") - ready
 
 # Ansible Product Demos
 

@@ -6,6 +6,7 @@ controller_inventory_sources:
     inventory: Datacenter 1
     credential: AWS
     source: ec2
+    overwrite: true
     source_vars:
       plugin: amazon.aws.aws_ec2
       regions:

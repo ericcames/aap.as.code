@@ -1,0 +1,8 @@
+---
+controller_schedules:
+  - name: Retire Datacenter 1
+    description: Retire DC1 at 6 pm to save money
+    rrule: DTSTART;TZID={{ timezone_id }}:20230101T180000 RRULE:FREQ=DAILY;INTERVAL=1
+    unified_job_template: "Setup - Datacenter 1"
+    state: present
+    job_tags: remove

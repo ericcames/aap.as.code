@@ -2,8 +2,8 @@
 gateway_role_user_assignments:
   - role_definition: Team Member
     user: netops
-    object_id: Network
+    object_ids: Network
 
   - role_definition: Team Admin
     user: netops_admin
-    object_id: Network
+    object_ids: Network

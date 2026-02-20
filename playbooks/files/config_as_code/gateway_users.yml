@@ -70,7 +70,7 @@ aap_user_accounts:
    last_name: Operations
    update_secrets: false
 
- - username: netops admin
+ - username: netops_admin
    password: "{{ default_passwd }}"
    email: netops@example.com
    first_name: Team

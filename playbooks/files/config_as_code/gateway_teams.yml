@@ -1,11 +1,18 @@
 ---
-teams:
+aap_teams:
 - name: "Network"
+  description: "The Network Team"
   organization: "{{ my_organization }}"
   state: present
 - name: "Server"
+  description: "The Server Team"
   organization: "{{ my_organization }}"
   state: present
 - name: "Storage"
+  description: "The Storage Team"
+  organization: "{{ my_organization }}"
+  state: present
+- name: "ITO"
+  description: "IT Operations"
   organization: "{{ my_organization }}"
   state: present

@@ -11,6 +11,7 @@
     aap_configuration_async_delay: 2
     controller_configuration_settings_secure_logging: true
     my_vault: ""
+    timezone_id: America/Phoenix
     github_username: ""
 
 

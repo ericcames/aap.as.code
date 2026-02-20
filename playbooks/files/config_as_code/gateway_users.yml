@@ -70,6 +70,13 @@ aap_user_accounts:
    last_name: Operations
    update_secrets: false
 
+ - username: netops admin
+   password: "{{ default_passwd }}"
+   email: netops@example.com
+   first_name: Team
+   last_name: Admin
+   update_secrets: false
+
  - username: bhinson
    is_superuser: true
    password: "{{ default_passwd }}"

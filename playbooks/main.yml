@@ -3,10 +3,16 @@
   gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    my_organization: "AmesCO"
-    my_aap_url: "https://aap.kona.services"
-    my_aap_credential: "aap.kona.services"
-    my_vault: ames
+    my_organization: "IT Service Automation"
+    my_aap_url: ""
+    my_aap_credential: "AAP Credential"
+    my_remote_vault: ""
+    aap_configuration_async_retries: 60
+    aap_configuration_async_delay: 2
+    controller_configuration_settings_secure_logging: true
+    my_vault: ""
+    github_username: ""
+
 
     # There is a bug in the infra.aap_configuration that causes the need for thing
     # When bug https://issues.redhat.com/browse/AAP-39349 this section can go away
@@ -31,38 +37,25 @@
           - "Red Hat Ansible Automation Platform credential is not set"
           - "Please assign correct credentials to the Job Template"
 
-    # - name: Create a new token using username and password
-    #   ansible.controller.token:
-    #     controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}:8443"
-    #     controller_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
-    #     controller_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
-    #     validate_certs: false
+    # - name: Create a new token
+    #   ansible.platform.token:
+    #     aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+    #     aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+    #     aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
+    #     aap_validate_certs: false
     #     description: AAP Setup
     #     scope: write
     #     state: present
 
+    - name: Grab vault from remote url
+      ansible.builtin.get_url:
+        url: '{{ my_remote_vault }}'
+        dest: files/config_as_code/remotevault.yml
+        mode: '0644'
+
     - name: Include configurations
       ansible.builtin.include_vars:
         dir: files/config_as_code
-
-    - name: Grab vault from remote url
-      when: 'remotevault is true'
-      ansible.builtin.get_url:
-        url: '{{ my_vault }}'
-        dest: files/vaults/remotevault.yml
-        mode: '0644'
-
-    - name: Include my Remote vault
-      when: 'remotevault is true'
-      ansible.builtin.include_vars:
-        dir: files/vaults
-        files_matching: remotevault.yml
-
-    - name: Include my vault
-      when: 'remotevault is not defined'
-      ansible.builtin.include_vars:
-        dir: files/vaults
-        files_matching: "{{ my_vault }}"
 
     - name: Do stuff
       vars:
@@ -70,15 +63,10 @@
       ansible.builtin.include_role:
         name: infra.aap_configuration.dispatch
 
-    - name: Print Message
-      when: user_message is defined
-      ansible.builtin.debug:
-        msg: "{{ user_message }}"
-
     # - name: Remove my token
-    #   ansible.controller.token:
-    #     controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}:8443"
-    #     controller_oauthtoken: "{{ controller_token }}"
-    #     existing_token: "{{ controller_token }}"
-    #     validate_certs: false
+    #   ansible.platform.token:
+    #     aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+    #     existing_token: "{{ aap_token }}"
+    #     aap_token: "{{ aap_token['token'] }}"
+    #     aap_validate_certs: false
     #     state: absent

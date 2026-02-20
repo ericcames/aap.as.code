@@ -1,21 +1,8 @@
 ---
 collections:
   - name: ansible.posix
-    version: 2.0.0
+    version: 2.1.0
   - name: ansible.utils
-<<<<<<< Updated upstream
-    version: 5.1.2
-  - name: ansible.platform
-    version: 2.5.20250213
-  - name: ansible.hub
-    version: 1.0.0
-  - name: ansible.controller
-    version: 4.6.8
-  - name: ansible.eda
-    version: 2.6.0
-  - name: infra.aap_configuration
-    version: 3.1.0
-=======
     version: 6.0.1
   - name: ansible.platform
     version: 2.6.20251106
@@ -27,4 +14,3 @@ collections:
     version: 2.11.0
   - name: infra.aap_configuration
     version: 4.2.0
->>>>>>> Stashed changes

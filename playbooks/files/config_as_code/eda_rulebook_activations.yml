@@ -1,0 +1,16 @@
+---
+eda_rulebook_activations:
+  - name: Catch Servicenow Events
+    description: Hook to listen for changes in ServiceNow
+    project: event.driven.ansible
+    organization: "{{ my_organization }}"
+    rulebook: servicenow/servicenow_events.yml
+    decision_environment: Default Decision Environment
+    extra_vars:
+      my_windows_catalog_short_description: "{{ my_windows_catalog_short_description }}"
+    event_streams:
+      - event_stream: ServiceNow Event Stream
+        # source_index:
+        source_name: __SOURCE_1
+    eda_credentials: Controller Credential
+    state: present

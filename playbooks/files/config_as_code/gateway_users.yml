@@ -1,0 +1,143 @@
+---
+aap_user_accounts:
+ - username: eames
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: ames@redhat.com
+   first_name: Eric
+   last_name: Ames
+
+ - username: mlowcher
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: mlowcher@redhat.com
+   first_name: Mark
+   last_name: Lowcher
+   update_secrets: false
+
+ - username: fchua
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: fchua@redhat.com
+   first_name: Faith
+   last_name: Chua
+   update_secrets: false
+
+ - username: zleblanc
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: zleblanc@redhat.com
+   first_name: Zach
+   last_name: Leblanc
+   update_secrets: false
+
+ - username: sgallegos
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: sgallegos@redhat.com
+   first_name: Shad
+   last_name: Gallegos
+   update_secrets: false
+
+ - username: gwormmee
+   is_system_auditor: true
+   password: "{{ default_passwd }}"
+   email: gwormmee@redhat.com
+   first_name: Greg
+   last_name: Wormmeester
+   update_secrets: false
+
+ - username: mgilber
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: gilbert@redhat.com
+   first_name: Mike
+   last_name: Gilbert
+   update_secrets: false
+
+ - username: mallmen
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: mallmen@redhat.com
+   first_name: Mike
+   last_name: Allmen
+   update_secrets: false
+
+ - username: netops
+   password: "{{ default_passwd }}"
+   email: netops@example.com
+   first_name: Network
+   last_name: Operations
+   update_secrets: false
+
+ - username: bhinson
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: bhinson@redhat.com
+   first_name: Brad
+   last_name: Hinson
+   update_secrets: false
+
+ - username: agarrett
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: agarrett@redhat.com
+   first_name: Andy
+   last_name: Garrett
+   update_secrets: false
+
+ - username: dasimmon
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: dasimmon@redhat.com
+   first_name: Dan
+   last_name: Simmons
+   update_secrets: false
+
+ - username: jason.horn
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: jason.horn@redhat.com
+   first_name: Jason
+   last_name: Horn
+   update_secrets: false
+
+ - username: mhooper
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: mhooper@redhat.com
+   first_name: Mark
+   last_name: Hooper
+   update_secrets: false
+
+ - username: sazed
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: sazed@redhat.com
+   first_name: Sohaib
+   last_name: Azed
+   update_secrets: false
+
+ - username: aschoenfeld
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: aschoenf@redhat.com
+   first_name: Andrew
+   last_name: Schoenfeld
+   update_secrets: false
+
+ - username: tcoulter
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: tcoulter@redhat.com
+   first_name: Timothy
+   last_name: Coulter
+   update_secrets: false
+
+ - username: cnorvill
+   is_superuser: true
+   password: "{{ default_passwd }}"
+   email: cnorvill@redhat.com
+   first_name: Christopher
+   last_name: Norville
+   update_secrets: false

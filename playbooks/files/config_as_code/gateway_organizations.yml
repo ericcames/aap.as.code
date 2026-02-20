@@ -1,7 +1,37 @@
 ---
 aap_organizations:
   - name: "{{ my_organization }}"
-  - name: LowcherCO
-  - name: GilbertCO
-  - name: HinsonCO
-  - name: LeblancCO
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
+  - name: Network
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
+  - name: Storage
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
+  - name: Online Shopping
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
+  - name: Data Center Operations
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy
+
+  - name: Security Operations Center
+    galaxy_credentials:
+      - Automation Hub - certified
+      - Automation Hub - validated
+      - Ansible Galaxy

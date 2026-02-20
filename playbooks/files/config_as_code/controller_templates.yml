@@ -1,24 +1,20 @@
 ---
 controller_templates:
-  - name: Setup - Linux Daily Demo - CAC
+  - name: Setup - Windows Daily Demo - CAC
     job_type: run
     inventory: AAP Managed Inventory
     organization: "{{ my_organization }}"
     execution_environment: Default execution environment
-    project: aap.dailydemo.linux
+    project: aap.dailydemo.windows
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - "Eric Ames"
+      - "{{ my_vault }}"
     extra_vars:
-      my_organization: "{{ my_organization }}"
-      my_vault: Eric Ames
-      my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
-      my_aws_machine_credential: AWS Machine Credential - Ames
-      my_sat_credential: sat.kona.services
+      my_vault: "{{ my_vault }}"
       timezone_id: America/Phoenix
-      aap_configuration_async_retries: 60
+      my_remote_vault: "{{ my_remote_vault }}"
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
 
   - name: Setup - f5 Daily Demo - CAC
     job_type: run
@@ -29,13 +25,12 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - "Eric Ames"
+      - "{{ my_vault }}"
     extra_vars:
-      my_organization: "{{ my_organization }}"
-      my_vault: Eric Ames
-      my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
-      aap_configuration_async_retries: 60
+      my_vault: "{{ my_vault }}"
+      timezone_id: America/Phoenix
+      my_remote_vault: "{{ my_remote_vault }}"
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
 
   - name: Setup - Panos Daily Demo - CAC
     job_type: run
@@ -46,30 +41,12 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - "Eric Ames"
+      - "{{ my_vault }}"
     extra_vars:
-      my_organization: "{{ my_organization }}"
-      my_vault: Eric Ames
-      my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
-      aap_configuration_async_retries: 60
-
-  - name: Setup - Windows Daily Demo - CAC
-    job_type: run
-    inventory: AAP Managed Inventory
-    organization: "{{ my_organization }}"
-    execution_environment: Default execution environment
-    project: aap.dailydemo.windows
-    playbook: playbooks/setup_demo.yml
-    credentials:
-      - "{{ my_aap_credential }}"
-      - "Eric Ames"
-    extra_vars:
-      my_organization: "{{ my_organization }}"
-      my_vault: Eric Ames
-      my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
-      aap_configuration_async_retries: 60
+      my_vault: "{{ my_vault }}"
+      timezone_id: America/Phoenix
+      my_remote_vault: "{{ my_remote_vault }}"
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
 
   - name: Setup - Satellite Daily Demo - CAC
     job_type: run
@@ -80,10 +57,43 @@ controller_templates:
     playbook: playbooks/setup_demo.yml
     credentials:
       - "{{ my_aap_credential }}"
-      - "Eric Ames"
+      - "{{ my_vault }}"
     extra_vars:
-      my_organization: "{{ my_organization }}"
-      my_vault: Eric Ames
-      my_rh_aap_credential: "{{ my_aap_credential }}"
-      my_aws_credential: AWS Blank Open Environment pvwk8
-      aap_configuration_async_retries: 60
+      my_vault: "{{ my_vault }}"
+      my_remote_vault: "{{ my_remote_vault }}"
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
+
+  - name: Setup - HashiCorp Daily Demo - CAC
+    job_type: run
+    inventory: AAP Managed Inventory
+    organization: "{{ my_organization }}"
+    execution_environment: hashicorp_ee
+    project: aap.dailydemo.hashicorp
+    playbook: playbooks/setup_demo.yml
+    credentials:
+      - "{{ my_aap_credential }}"
+      - "{{ my_vault }}"
+    extra_vars:
+      my_vault: "{{ my_vault }}"
+      timezone_id: America/Phoenix
+      my_remote_vault: "{{ my_remote_vault }}"
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
+
+  - name: Setup - Datacenter 1
+    job_type: run
+    inventory: Datacenter 1
+    organization: "{{ my_organization }}"
+    execution_environment: hashicorp_ee
+    project: demo.datacenter
+    playbook: playbooks/main.yml
+    ask_tags_on_launch: true
+    job_tags: create,remove
+    credentials:
+      - "{{ my_aap_credential }}"
+      - "{{ my_vault }}"
+      - AWS
+    extra_vars:
+      my_vault: "{{ my_vault }}"
+      timezone_id: America/Phoenix
+      my_remote_vault: "{{ my_remote_vault }}"
+      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"

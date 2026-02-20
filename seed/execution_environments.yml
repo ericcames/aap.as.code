@@ -1,6 +1,0 @@
----
-controller_execution_environments:
-  - name: "Windows Workshop Execution Environment"
-    image: quay.io/acme_corp/windows_ee:latest
-    pull: missing
-    organization: Ames Company

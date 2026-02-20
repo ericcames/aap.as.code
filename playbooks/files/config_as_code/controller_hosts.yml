@@ -5,3 +5,8 @@ controller_hosts:
   variables:
     ansible_host: '127.0.0.1'
     ansible_connection: 'local'
+- name: localhost
+  inventory: Datacenter 1
+  variables:
+    ansible_host: '127.0.0.1'
+    ansible_connection: 'local'

@@ -1,0 +1,22 @@
+---
+hub_collection_repositories:
+  - name: "community"
+    description: "Community content repository"
+    pulp_labels:
+      pipeline: "approved"
+    distribution:
+      name: "community"
+      state: present
+    remote: community
+
+  - name: "validated"
+    description: "Red Hat validated content"
+    pulp_labels:
+      pipeline: "approved"
+    remote: validated
+
+  - name: "rh-certified"
+    description: "Red Hat certified content"
+    pulp_labels:
+      pipeline: "approved"
+    remote: rh-certified

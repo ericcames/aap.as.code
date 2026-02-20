@@ -1,0 +1,21 @@
+---
+controller_inventory_sources:
+  - name: running
+    organization: "{{ my_organization }}"
+    description: AWS running ec2
+    inventory: Datacenter 1
+    credential: AWS
+    source: ec2
+    overwrite: true
+    source_vars:
+      plugin: amazon.aws.aws_ec2
+      regions:
+        - us-west-1
+      filters:
+        # All instances with their state as `running`
+        instance-state-name: running
+      # keyed_groups may be used to create custom groups
+      strict: false
+      keyed_groups:
+        - key: tags.Application
+          separator: ''

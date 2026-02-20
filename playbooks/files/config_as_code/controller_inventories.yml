@@ -3,3 +3,7 @@ controller_inventories:
   - name: AAP Managed Inventory
     organization: "{{ my_organization }}"
     description: Daily Demo Inventory
+
+  - name: Datacenter 1
+    organization: "{{ my_organization }}"
+    description: Demo Datacenter

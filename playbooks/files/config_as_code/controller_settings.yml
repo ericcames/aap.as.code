@@ -4,5 +4,5 @@ controller_settings:
     REDHAT_USERNAME: "{{ redhat_username }}"
     REDHAT_PASSWORD: "{{ redhat_passwd }}"
     INSIGHTS_TRACKING_STATE: true
-    SUBSCRIPTIONS_USERNAME: "{{ redhat_username }}"
-    SUBSCRIPTIONS_PASSWORD: "{{ redhat_passwd }}"
+    SUBSCRIPTIONS_CLIENT_ID: "{{ redhat_username }}"
+    SUBSCRIPTIONS_CLIENT_SECRET: "{{ redhat_passwd }}"

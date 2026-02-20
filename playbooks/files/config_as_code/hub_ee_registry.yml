@@ -1,0 +1,11 @@
+---
+hub_ee_registries:
+  - name: Red Hat Ecosystem Catalog
+    url: https://registry.redhat.io
+    username: "{{ reg_rh_io_username }}"
+    password: "{{ reg_rh_io_passwd }}"
+
+  - name: Red Hat Quay.io
+    url: https://quay.io
+    username: "{{ quay_username }}"
+    password: "{{ quay_passwd }}"

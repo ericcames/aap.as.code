@@ -1,5 +1,5 @@
 ---
-teams:
+aap_teams:
 - name: "Network"
   organization: "{{ my_organization }}"
   state: present

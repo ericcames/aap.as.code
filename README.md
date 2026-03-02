@@ -18,42 +18,71 @@ Looking for other Daily Demos?
 
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/redhatdemo.png "Catalog Item")
 
-**Moving in**
+**Getting started**
+1. [Get Automation Hub Token](https://console.redhat.com/ansible/automation-hub/token/ "Load Token")<br>
+2. [Create Service Account](https://github.com/ericcames/aap.as.code.starter.kit/blob/main/docs/Ansible%20Automation%20Platform%20Service%20Account.pdf "Service Account")<br>
+3. Ensure that we have a certified credential
+    - Name
+    ```
+    Automation Hub - certified
+    ```
+    - Credential type
+    ```
+    Ansible Galaxy/Automation Hub API Token
+    ```
+    - Galaxy Server URL
+    ```
+    https://console.redhat.com/api/automation-hub/content/published/
+    ```
+    - Auth Server URL
+    ```
+    https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
+    ```
+    - API Token
 
-1. Ensure that we have the following credentials
-    - Automation Hub - certified
-    - Galaxy Server URL - https://console.redhat.com/api/automation-hub/content/published/
-    - Auth Server URL - https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
-    - Credential type - Ansible Galaxy/Automation Hub API Token
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/AHcertified.png "certified")
 
-    - Automation Hub - validated
-    - Galaxy Server URL - https://console.redhat.com/api/automation-hub/content/validated/
-    - Auth Server URL - https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
-    - Credential type - Ansible Galaxy/Automation Hub API Token
+4. Ensure that we have a validated credential
+    - Name
+    ```
+    Automation Hub - validated
+    ```
+    - Credential type
+    ```
+    Ansible Galaxy/Automation Hub API Token
+    ```
+    - Galaxy Server URL
+    ```
+    https://console.redhat.com/api/automation-hub/content/validated/
+    ```
+    - Auth Server URL
+    ```
+    https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
+    ```
+    - API Token
 
-2. Ensure the Galaxy credentials are related to the Default Organization
+5. Ensure the Galaxy credentials are related to the Default Organization
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/orgswithcreds.png "Default Organization")
 
-3. Create your vault credential
+6. Create your vault credential
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/myvault.png "Vault")
 
-4. Create your project
+7. Create your project
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/project.png "aap.as.code")
 
-5. Create a remote vault with your secrets
+8. Create a remote vault with your secrets
 
 [Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>
 [Example Vault](https://github.com/ericcames/sourcefiles/blob/main/vault_example.yml "vault_example.yml")<br>
 
-6. Add your public ssh key to a public repo.  Amazon works with RSA keys.
+9. Add your public ssh key to a public repo.  Amazon works with RSA keys.
 
 [Public SSH Key](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub "Public SSH Key")
 
-7. Update my_windows_catalog_short_description: Ames AAP Windows AWS Daily Demo with the short description of your catalog item.<br>
+10. Update my_windows_catalog_short_description: Ames AAP Windows AWS Daily Demo with the short description of your catalog item.<br>
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/snowshort.png "ServiceNow Catalog Item")
 
-8. Create your job template
+11. Create your job template
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/newtemplate.png "Setup - AAP - CAC")
 
 Template name

@@ -83,12 +83,13 @@ Looking for other Daily Demos?
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/snowshort.png "ServiceNow Catalog Item")
 
 11. Create your job template
-![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/newtemplate.png "Setup - AAP - CAC")
 
 Template name
 ```
 Setup - AAP - CAC
 ```
+
+![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/setup_template.png "Setup - AAP - CAC")
 
 Extra variables
 ```

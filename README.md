@@ -93,8 +93,6 @@ Setup - AAP - CAC
 Extra variables
 ```
 my_windows_catalog_short_description: Ames AAP Windows AWS Daily Demo
-my_aap_url: "GETTHISFROMAPD"
-my_ctrl_admin_password: "GETTHISFROMAPD"
 my_vault: Eric Ames
 my_remote_vault: >-
   https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml

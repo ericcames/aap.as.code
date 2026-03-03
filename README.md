@@ -65,6 +65,9 @@ Looking for other Daily Demos?
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/orgswithcreds.png "Default Organization")
 
 6. Create your vault credential
+
+**There is a dependency to use the team default_password that allows the F5 demo to work**
+
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/myvault.png "Vault")
 
 7. Create your project

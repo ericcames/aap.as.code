@@ -92,6 +92,7 @@ controller_templates:
       - "{{ my_aap_credential }}"
       - "{{ my_vault }}"
       - AWS
+      - Aws Machine Credential
     extra_vars:
       my_vault: "{{ my_vault }}"
       timezone_id: America/Phoenix

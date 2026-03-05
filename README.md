@@ -14,6 +14,7 @@ Looking for other Daily Demos?
 - [AAP Daily Demo hashicorp](https://github.com/ericcames/aap.dailydemo.hashicorp "AAP Daily Demo hashicorp") - ready
 - [Datacenter 1](https://github.com/ericcames/demo.datacenter "Datacenter 1") - ready<br>
   * Datacenter 1 current capabilities
+    * Terraform Infrastructre Management (community)
     * Satellite 6.18
 
 # Ansible Product Demos

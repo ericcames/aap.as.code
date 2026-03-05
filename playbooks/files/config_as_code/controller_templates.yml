@@ -48,21 +48,6 @@ controller_templates:
       my_remote_vault: "{{ my_remote_vault }}"
       my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
 
-  - name: Setup - Satellite Daily Demo - CAC
-    job_type: run
-    inventory: AAP Managed Inventory
-    organization: "{{ my_organization }}"
-    execution_environment: Default execution environment
-    project: aap.dailydemo.satellite
-    playbook: playbooks/setup_demo.yml
-    credentials:
-      - "{{ my_aap_credential }}"
-      - "{{ my_vault }}"
-    extra_vars:
-      my_vault: "{{ my_vault }}"
-      my_remote_vault: "{{ my_remote_vault }}"
-      my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
-
   - name: Setup - HashiCorp Daily Demo - CAC
     job_type: run
     inventory: AAP Managed Inventory
@@ -79,7 +64,7 @@ controller_templates:
       my_remote_vault: "{{ my_remote_vault }}"
       my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
 
-  - name: Setup - Datacenter 1
+  - name: DC1 - Infrastructure Management (Terraform)
     job_type: run
     inventory: Datacenter 1
     organization: "{{ my_organization }}"
@@ -92,9 +77,21 @@ controller_templates:
       - "{{ my_aap_credential }}"
       - "{{ my_vault }}"
       - AWS
-      - Aws Machine Credential
     extra_vars:
-      my_vault: "{{ my_vault }}"
-      timezone_id: America/Phoenix
       my_remote_vault: "{{ my_remote_vault }}"
       my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
+
+  - name: DC1 - Satellite Setup
+    job_type: run
+    inventory: Datacenter 1
+    organization: "{{ my_organization }}"
+    execution_environment: "Default execution environment"
+    project: demo.datacenter
+    playbook: playbooks/satellite_setup.yml
+    ask_tags_on_launch: true
+    job_tags: create
+    credentials:
+      - "{{ my_vault }}"
+      - Aws Machine Credential
+    extra_vars:
+      my_remote_vault: "{{ my_remote_vault }}"

@@ -10,9 +10,11 @@ Looking for other Daily Demos?
 - [AAP Daily Demo Linux](https://github.com/ericcames/aap.dailydemo.linux "AAP Daily Demo Linux")
 - [AAP Daily Demo F5](https://github.com/ericcames/aap.dailydemo.F5 "AAP Daily Demo F5") - ready
 - [AAP Daily Demo Panos](https://github.com/ericcames/aap.dailydemo.Panos "AAP Daily Demo Panos") - ready
-- [AAP Daily Demo Satellite](https://github.com/ericcames/aap.dailydemo.satellite "AAP Daily Demo Satellite")
+- [AAP Daily Demo Satellite](https://github.com/ericcames/aap.dailydemo.satellite "AAP Daily Demo Satellite") - moved to Datacenter 1
 - [AAP Daily Demo hashicorp](https://github.com/ericcames/aap.dailydemo.hashicorp "AAP Daily Demo hashicorp") - ready
-- [Datacenter 1](https://github.com/ericcames/demo.datacenter "Datacenter 1") - ready
+- [Datacenter 1](https://github.com/ericcames/demo.datacenter "Datacenter 1") - ready<br>
+**Datacenter 1 current capabilities**
+  * Satellite 6.18
 
 # Ansible Product Demos
 

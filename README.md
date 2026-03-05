@@ -13,13 +13,6 @@ Looking for other Daily Demos?
 - [AAP Daily Demo Satellite](https://github.com/ericcames/aap.dailydemo.satellite "AAP Daily Demo Satellite") - moved to Datacenter 1
 - [AAP Daily Demo hashicorp](https://github.com/ericcames/aap.dailydemo.hashicorp "AAP Daily Demo hashicorp") - ready
 - [Datacenter 1](https://github.com/ericcames/demo.datacenter "Datacenter 1") - ready<br>
-  * Datacenter 1 current capabilities
-    * Terraform Infrastructure Management (community)
-    * Satellite 6.18
-    * Active Directory - coming soon
-    * F5 - provisioned, not setup
-    * Panos - provisioned, not setup
-    * Infoblox - provisioned not setup
 
 # Ansible Product Demos
 

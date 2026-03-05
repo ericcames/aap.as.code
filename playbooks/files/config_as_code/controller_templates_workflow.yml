@@ -2,6 +2,8 @@
 controller_workflows:
 -   name: Run workflow for Datacenter 1 (DC1)
     organization: "{{ my_organization }}"
+    job_tags:
+      create
     related:
       workflow_nodes:
       -   identifier: DC1 - Infrastructure Management (Terraform)

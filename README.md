@@ -73,6 +73,19 @@ Looking for other Daily Demos?
 7. Create your project
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/project.png "aap.as.code")
 
+    - Name
+    ```
+    aap.as.code
+    ```
+    - Source control type
+    ```
+    Git
+    ```
+    - Source control URL
+    ```
+    https://github.com/ericcames/aap.as.code.git
+    ```
+
 8. Create a remote vault with your secrets
 
 [Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>

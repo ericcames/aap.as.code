@@ -77,6 +77,7 @@ controller_templates:
       - "{{ my_aap_credential }}"
       - "{{ my_vault }}"
       - AWS
+      - AWS Machine Credential
     extra_vars:
       my_remote_vault: "{{ my_remote_vault }}"
       my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"

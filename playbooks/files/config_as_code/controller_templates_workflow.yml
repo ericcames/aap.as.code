@@ -1,0 +1,23 @@
+---
+controller_workflows:
+-   name: Run workflow for Datacenter 1 (DC1)
+    organization: "{{ my_organization }}"
+    job_tags:
+      create
+    related:
+      workflow_nodes:
+      -   identifier: DC1 - Infrastructure Management (Terraform)
+          related:
+            success_nodes:
+            -   identifier: DC1 - Satellite Setup
+          unified_job_template:
+              name: DC1 - Infrastructure Management (Terraform)
+              organization:
+                name: "{{ my_organization }}"
+              type: job_template
+      -   identifier: DC1 - Satellite Setup
+          unified_job_template:
+            name: DC1 - Satellite Setup
+            organization:
+              name: "{{ my_organization }}"
+            type: job_template

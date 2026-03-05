@@ -32,30 +32,6 @@ controller_projects:
   scm_update_on_launch: 'no'
   scm_url: "https://github.com/ericcames/event.driven.ansible.git"
 
-- name: aap.dailydemo.linux
-  organization: "{{ my_organization }}"
-  scm_clean: 'no'
-  scm_delete_on_update: 'no'
-  scm_type: git
-  scm_update_on_launch: 'no'
-  scm_url: https://github.com/ericcames/aap.dailydemo.linux.git
-
-- name: aap.dailydemo.satellite
-  organization: "{{ my_organization }}"
-  scm_clean: 'no'
-  scm_delete_on_update: 'no'
-  scm_type: git
-  scm_update_on_launch: 'no'
-  scm_url: https://github.com/ericcames/aap.dailydemo.satellite.git
-
-- name: aap.dailydemo.linux
-  organization: "{{ my_organization }}"
-  scm_clean: 'no'
-  scm_delete_on_update: 'no'
-  scm_type: git
-  scm_update_on_launch: 'no'
-  scm_url: https://github.com/ericcames/aap.dailydemo.linux.git
-
 - name: aap.dailydemo.hashicorp
   organization: "{{ my_organization }}"
   scm_clean: 'no'

@@ -91,6 +91,34 @@ Looking for other Daily Demos?
 [Remote Vault](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml "vault_ames.yml")<br>
 [Example Vault](https://github.com/ericcames/sourcefiles/blob/main/vault_example.yml "vault_example.yml")<br>
 
+Variables for your online vault
+
+| Key | Description | Purpose |
+|---|---|---|
+| default_passwd | Our team password; Also used in the F5 | Default Password |
+| redhat_username | RH Service Account Username | Used to register the system |
+| redhat_passwd | RH Service Account Password | Used to register the system |
+| ddw_password | Windows server password | Used to grant access to windows servers |
+| ddw_username | Windows server username | Used to grant access to windows servers |
+| snow_url | The URL for your ServiceNow instance | Used for SNOW automation |
+| snow_username | The username for your ServiceNow instance | Used for SNOW automation |
+| servicenow_passwd | The password for your ServiceNow instance | Used for SNOW automation |
+| ssh_priv_key | Your laptop private key | Used to give you access to what you build. |
+| dyna_key | Not sure if this is used or not | Need to determine if this is used |
+| vault_passwd | Not sure if this is used or not | Need to determin if this is used |
+| red_hat_auto_hub_token | API Token for Red Hat Automation Hub | Used to pull collections |
+| my_ctrl_username | Not sure if this is used | Need to determine if this is used |
+| my_ctrl_admin_password | Not sure if this is used | Need to determine if this is used |
+| admin_password | Admin password for the network gear | Used for the admin password F5, Palo, Infoblox |
+| reg_rh_io_passwd | registry.redhat.io | Used to get access to images |
+| reg_rh_io_username | registry.redhat.io | Used to get access to images |
+| quay_passwd | quay.io | Used to get access to images |
+| quay_username | quay.io | Used to get access to images |
+| customer_portal_username | Red Hat Customer Portal | Get access to software |
+| customer_portal_password | Red Hat Customer Portal | Get access to software |
+| rh_activation_key | Red Hat activation key | Used by the rhsm role |
+| rh_org_id | Red Hat Org ID | Used by the rhsm role |
+
 9. Add your public ssh key to a public repo.  Amazon works with RSA keys.
 
 [Public SSH Key](https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub "Public SSH Key")

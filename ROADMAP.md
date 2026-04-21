@@ -83,8 +83,8 @@ DC1 is a layered stack. Each layer is a prerequisite for the layers above it.
 These fixes are independent of the DC1 migration and should be completed immediately
 so demos are not running with known broken components.
 
-- ⬜ **Fix credential bug** — Change `Network F5` to `Daily Demo F5 Network` on
-  `Day 2 - lb pool check` and `Day 2 - Linux Patching` job templates
+- ✅ **Credential bug validated — no fix needed** — Tested `Run Linux Patching Workflow`
+  in dev; credential resolved correctly, no changes required
   ([issue #13](https://github.com/ericcames/aap.dailydemo.F5/issues/13))
 - ✅ **Fix workflow creation bug** — Consolidated all `controller_workflows:` definitions
   into `controller_workflow_job_templates.yml` to eliminate the `include_vars: dir:` key
@@ -165,7 +165,7 @@ Add capabilities that address current customer conversations and AAP platform ev
 
 | Issue                                                        | Repo             | Priority | Status                |
 |--------------------------------------------------------------|------------------|----------|-----------------------|
-| `Network F5` credential on Day 2 patching templates (#13)   | aap.dailydemo.F5 | High     | Open                  |
+| `Network F5` credential on Day 2 patching templates (#13)   | aap.dailydemo.F5 | High     | ✅ No fix needed       |
 | Only one workflow created (include_vars key overwrite) (#14) | aap.dailydemo.F5 | High     | ✅ Resolved            |
 | Run workflow fires both create and remove tags (#18)         | aap.dailydemo.F5 | High     | ✅ Resolved            |
 | Daily Demo F5 website missing extra_vars and vault cred (#21, #23) | aap.dailydemo.F5 | High | ✅ Resolved       |

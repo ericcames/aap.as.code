@@ -84,16 +84,27 @@ These fixes are independent of the DC1 migration and should be completed immedia
 so demos are not running with known broken components.
 
 - [ ] **Fix credential bug** — Change `Network F5` to `Daily Demo F5 Network` on
-  `Day 2 - lb pool check` and `Day 2 - Linux Patching` job templates in
-  `playbooks/files/config_as_code/40_job_templates.yml`
-- [ ] **Fix workflow creation bug** — Consolidate all `controller_workflows:` definitions
-  into a single file (`60_workflows.yml`) to eliminate the `include_vars: dir:` key
-  overwrite problem
+  `Day 2 - lb pool check` and `Day 2 - Linux Patching` job templates
+  ([issue #13](https://github.com/ericcames/aap.dailydemo.F5/issues/13))
+- [x] **Fix workflow creation bug** — Consolidated all `controller_workflows:` definitions
+  into `controller_workflow_job_templates.yml` to eliminate the `include_vars: dir:` key
+  overwrite problem — validated in dev, all 6 workflows confirmed created
+  ([issue #14](https://github.com/ericcames/aap.dailydemo.F5/issues/14))
+- [x] **Fix Run workflow for the f5 Daily Demo** — Added `job_tags: create` to
+  `Daily Demo F5 Create/Remove` workflow node to prevent both create and remove
+  tags firing simultaneously — validated end-to-end in dev
+  ([issue #18](https://github.com/ericcames/aap.dailydemo.F5/issues/18))
+- [x] **Fix Daily Demo F5 website template** — Added missing `extra_vars`
+  (`my_remote_vault`, `my_remote_ssh_pub_key`) and correct vault credential (`my_vault`)
+  so the `remote_vault` role can fetch and decrypt vaulted variables — validated end-to-end
+  ([issues #21](https://github.com/ericcames/aap.dailydemo.F5/issues/21),
+  [#23](https://github.com/ericcames/aap.dailydemo.F5/issues/23))
 - [ ] **Add post-setup validation** — Add a final play to `setup_demo.yml` that queries
   the AAP API and asserts all expected job templates exist with correct credentials and
   all expected workflows are present before exiting green
-- [ ] **Pin collection version** — Pin a known-good version of `infra.aap_configuration`
-  in `collections/requirements.yml` to prevent upstream async bugs from reintroducing
+  ([issue #15](https://github.com/ericcames/aap.dailydemo.F5/issues/15))
+- [x] **Pin collection version** — `infra.aap_configuration` pinned at 4.2.0 in
+  `collections/requirements.yml`
 
 ---
 
@@ -154,10 +165,12 @@ Add capabilities that address current customer conversations and AAP platform ev
 
 | Issue                                                        | Repo             | Priority | Status                |
 |--------------------------------------------------------------|------------------|----------|-----------------------|
-| `Network F5` credential on Day 2 patching templates         | aap.dailydemo.F5 | High     | Open                  |
-| Only one workflow created (include_vars key overwrite)       | aap.dailydemo.F5 | High     | Open                  |
+| `Network F5` credential on Day 2 patching templates (#13)   | aap.dailydemo.F5 | High     | Open                  |
+| Only one workflow created (include_vars key overwrite) (#14) | aap.dailydemo.F5 | High     | ✅ Resolved            |
+| Run workflow fires both create and remove tags (#18)         | aap.dailydemo.F5 | High     | ✅ Resolved            |
+| Daily Demo F5 website missing extra_vars and vault cred (#21, #23) | aap.dailydemo.F5 | High | ✅ Resolved       |
 | Intermittent async behavior in infra.aap_configuration 4.6.6 | aap.dailydemo.F5 | Medium   | Upstream (issue #1029)|
-| No post-setup validation on any demo                         | All demos        | Medium   | Open                  |
+| No post-setup validation on any demo (#15)                   | All demos        | Medium   | Open                  |
 
 ---
 

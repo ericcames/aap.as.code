@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- `ROADMAP.md` — marked issues #14, #18, #21, #23 resolved in Phase 1 checklist and Known Issues table; added issue links
+
 ### Added
 - `CLAUDE.md` — Claude-specific guidelines covering new AAP environment setup, bootstrap playbook usage, collection install steps, key files, and project conventions
 

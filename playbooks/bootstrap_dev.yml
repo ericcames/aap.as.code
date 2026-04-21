@@ -1,0 +1,118 @@
+---
+- name: Bootstrap AAP Dev Environment
+  hosts: localhost
+  gather_facts: false
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    controller_host: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+    controller_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+    controller_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
+    controller_validate_certs: false
+    hub_token: "{{ lookup('ini', 'token section=galaxy_server.rh_certified file=/home/eames/.ansible/ansible.cfg') }}"
+    vault_password: "{{ lookup('ansible.builtin.file', '/home/eames/.ansible/secrets2') | trim }}"
+    hub_auth_url: "https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token"
+    my_remote_vault: "https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml"
+    my_remote_ssh_pub_key: "https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub"
+
+  tasks:
+
+    - name: Assert controller environment variables are set
+      ansible.builtin.assert:
+        that:
+          - controller_host != ''
+          - controller_username != ''
+          - controller_password != ''
+        fail_msg:
+          - "Controller credentials are not set."
+          - "Run: export CONTROLLER_HOST / CONTROLLER_USERNAME / CONTROLLER_PASSWORD"
+
+    - name: Create Automation Hub - certified credential
+      ansible.controller.credential:
+        controller_host: "{{ controller_host }}"
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+        validate_certs: "{{ controller_validate_certs }}"
+        name: "Automation Hub - certified"
+        organization: Default
+        credential_type: "Ansible Galaxy/Automation Hub API Token"
+        inputs:
+          url: "https://console.redhat.com/api/automation-hub/content/published/"
+          auth_url: "{{ hub_auth_url }}"
+          token: "{{ hub_token }}"
+        state: present
+
+    - name: Create Automation Hub - validated credential
+      ansible.controller.credential:
+        controller_host: "{{ controller_host }}"
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+        validate_certs: "{{ controller_validate_certs }}"
+        name: "Automation Hub - validated"
+        organization: Default
+        credential_type: "Ansible Galaxy/Automation Hub API Token"
+        inputs:
+          url: "https://console.redhat.com/api/automation-hub/content/validated/"
+          auth_url: "{{ hub_auth_url }}"
+          token: "{{ hub_token }}"
+        state: present
+
+    - name: Associate Galaxy credentials with Default Organization
+      ansible.controller.organization:
+        controller_host: "{{ controller_host }}"
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+        validate_certs: "{{ controller_validate_certs }}"
+        name: Default
+        galaxy_credentials:
+          - "Automation Hub - certified"
+          - "Automation Hub - validated"
+        state: present
+
+    - name: Create Eric Ames vault credential
+      ansible.controller.credential:
+        controller_host: "{{ controller_host }}"
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+        validate_certs: "{{ controller_validate_certs }}"
+        name: "Eric Ames"
+        organization: Default
+        credential_type: "Vault"
+        inputs:
+          vault_password: "{{ vault_password }}"
+        state: present
+
+    - name: Create aap.as.code project
+      ansible.controller.project:
+        controller_host: "{{ controller_host }}"
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+        validate_certs: "{{ controller_validate_certs }}"
+        name: "aap.as.code"
+        organization: Default
+        scm_type: git
+        scm_url: "https://github.com/ericcames/aap.as.code.git"
+        scm_branch: ericames/productdemo
+        scm_update_on_launch: true
+        wait: true
+        state: present
+
+    - name: Create Setup - AAP - CAC job template
+      ansible.controller.job_template:
+        controller_host: "{{ controller_host }}"
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+        validate_certs: "{{ controller_validate_certs }}"
+        name: "Setup - AAP - CAC"
+        organization: Default
+        inventory: "Demo Inventory"
+        project: "aap.as.code"
+        playbook: "playbooks/main.yml"
+        credentials:
+          - "Eric Ames"
+        extra_vars:
+          my_windows_catalog_short_description: "Ames AAP Windows AWS Daily Demo"
+          my_vault: "Eric Ames"
+          my_remote_vault: "{{ my_remote_vault }}"
+          my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
+        ask_variables_on_launch: false
+        state: present

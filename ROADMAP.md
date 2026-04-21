@@ -83,27 +83,27 @@ DC1 is a layered stack. Each layer is a prerequisite for the layers above it.
 These fixes are independent of the DC1 migration and should be completed immediately
 so demos are not running with known broken components.
 
-- [ ] **Fix credential bug** — Change `Network F5` to `Daily Demo F5 Network` on
+- ⬜ **Fix credential bug** — Change `Network F5` to `Daily Demo F5 Network` on
   `Day 2 - lb pool check` and `Day 2 - Linux Patching` job templates
   ([issue #13](https://github.com/ericcames/aap.dailydemo.F5/issues/13))
-- [x] **Fix workflow creation bug** — Consolidated all `controller_workflows:` definitions
+- ✅ **Fix workflow creation bug** — Consolidated all `controller_workflows:` definitions
   into `controller_workflow_job_templates.yml` to eliminate the `include_vars: dir:` key
   overwrite problem — validated in dev, all 6 workflows confirmed created
   ([issue #14](https://github.com/ericcames/aap.dailydemo.F5/issues/14))
-- [x] **Fix Run workflow for the f5 Daily Demo** — Added `job_tags: create` to
+- ✅ **Fix Run workflow for the f5 Daily Demo** — Added `job_tags: create` to
   `Daily Demo F5 Create/Remove` workflow node to prevent both create and remove
   tags firing simultaneously — validated end-to-end in dev
   ([issue #18](https://github.com/ericcames/aap.dailydemo.F5/issues/18))
-- [x] **Fix Daily Demo F5 website template** — Added missing `extra_vars`
+- ✅ **Fix Daily Demo F5 website template** — Added missing `extra_vars`
   (`my_remote_vault`, `my_remote_ssh_pub_key`) and correct vault credential (`my_vault`)
   so the `remote_vault` role can fetch and decrypt vaulted variables — validated end-to-end
   ([issues #21](https://github.com/ericcames/aap.dailydemo.F5/issues/21),
   [#23](https://github.com/ericcames/aap.dailydemo.F5/issues/23))
-- [ ] **Add post-setup validation** — Add a final play to `setup_demo.yml` that queries
+- ⬜ **Add post-setup validation** — Add a final play to `setup_demo.yml` that queries
   the AAP API and asserts all expected job templates exist with correct credentials and
   all expected workflows are present before exiting green
   ([issue #15](https://github.com/ericcames/aap.dailydemo.F5/issues/15))
-- [x] **Pin collection version** — `infra.aap_configuration` pinned at 4.2.0 in
+- ✅ **Pin collection version** — `infra.aap_configuration` pinned at 4.2.0 in
   `collections/requirements.yml`
 
 ---
@@ -112,11 +112,11 @@ so demos are not running with known broken components.
 
 Complete Layer 1 so the datacenter has a stable foundation before adding appliances.
 
-- [ ] Complete Active Directory provisioning and AAP integration
-- [ ] Add Infoblox DNS/IPAM provisioning
-- [ ] Validate Layer 1 end-to-end: Satellite + AD + Infoblox stable and interoperable
-- [ ] Establish post-setup validation pattern for DC1 `setup_demo.yml`
-- [ ] Document Layer 0 + Layer 1 as a standalone demo story ("Here is your datacenter
+- ⬜ Complete Active Directory provisioning and AAP integration
+- ⬜ Add Infoblox DNS/IPAM provisioning
+- ⬜ Validate Layer 1 end-to-end: Satellite + AD + Infoblox stable and interoperable
+- ⬜ Establish post-setup validation pattern for DC1 `setup_demo.yml`
+- ⬜ Document Layer 0 + Layer 1 as a standalone demo story ("Here is your datacenter
   foundation, built by code in under an hour")
 
 ---
@@ -125,12 +125,12 @@ Complete Layer 1 so the datacenter has a stable foundation before adding applian
 
 Migrate Layer 2 and Layer 3 from standalone repos into DC1.
 
-- [ ] Migrate F5 BIG-IP provisioning into DC1 — re-target against DC1 inventory
-- [ ] Migrate Palo Alto provisioning into DC1
-- [ ] Deploy RHEL workload nodes managed by Satellite
-- [ ] Deploy Windows workload nodes joined to Active Directory
-- [ ] Retire `aap.dailydemo.F5` standalone infrastructure (keep Day 2 playbooks)
-- [ ] Retire `aap.dailydemo.Panos` standalone infrastructure (keep Day 2 playbooks)
+- ⬜ Migrate F5 BIG-IP provisioning into DC1 — re-target against DC1 inventory
+- ⬜ Migrate Palo Alto provisioning into DC1
+- ⬜ Deploy RHEL workload nodes managed by Satellite
+- ⬜ Deploy Windows workload nodes joined to Active Directory
+- ⬜ Retire `aap.dailydemo.F5` standalone infrastructure (keep Day 2 playbooks)
+- ⬜ Retire `aap.dailydemo.Panos` standalone infrastructure (keep Day 2 playbooks)
 
 ---
 
@@ -138,13 +138,13 @@ Migrate Layer 2 and Layer 3 from standalone repos into DC1.
 
 Add capabilities that address current customer conversations and AAP platform evolution.
 
-- [ ] **EDA across all demos** — Convert patching workflow approval node to an
+- ⬜ **EDA across all demos** — Convert patching workflow approval node to an
   EDA-triggered automation (CVE notification → automatic patching workflow launch)
-- [ ] **Ansible Lightspeed / AI integration** — In-controller playbook generation demo
+- ⬜ **Ansible Lightspeed / AI integration** — In-controller playbook generation demo
   targeting the sysadmin-to-automation journey
-- [ ] **Terraform + Ansible narrative** — Build explicit demo story around how AAP
+- ⬜ **Terraform + Ansible narrative** — Build explicit demo story around how AAP
   and Terraform coexist (targets customers who already have Terraform investment)
-- [ ] **Multi-demo scenario** — A single DC1 environment that can demonstrate F5,
+- ⬜ **Multi-demo scenario** — A single DC1 environment that can demonstrate F5,
   Satellite, AD, and ITSM integration in one connected story without switching demos
 
 ---

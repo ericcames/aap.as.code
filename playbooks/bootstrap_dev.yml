@@ -55,10 +55,10 @@
       block:
 
         - name: Create Automation Hub - certified credential
-          ansible.platform.credential:
-            aap_hostname: "{{ aap_hostname }}"
-            aap_token: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
-            aap_validate_certs: "{{ aap_validate_certs }}"
+          ansible.controller.credential:
+            controller_host: "{{ aap_hostname }}"
+            controller_oauthtoken: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
+            validate_certs: "{{ aap_validate_certs }}"
             name: "Automation Hub - certified"
             organization: Default
             credential_type: "Ansible Galaxy/Automation Hub API Token"
@@ -69,10 +69,10 @@
             state: present
 
         - name: Create Automation Hub - validated credential
-          ansible.platform.credential:
-            aap_hostname: "{{ aap_hostname }}"
-            aap_token: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
-            aap_validate_certs: "{{ aap_validate_certs }}"
+          ansible.controller.credential:
+            controller_host: "{{ aap_hostname }}"
+            controller_oauthtoken: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
+            validate_certs: "{{ aap_validate_certs }}"
             name: "Automation Hub - validated"
             organization: Default
             credential_type: "Ansible Galaxy/Automation Hub API Token"
@@ -83,10 +83,10 @@
             state: present
 
         - name: Associate Galaxy credentials with Default Organization
-          ansible.platform.organization:
-            aap_hostname: "{{ aap_hostname }}"
-            aap_token: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
-            aap_validate_certs: "{{ aap_validate_certs }}"
+          ansible.controller.organization:
+            controller_host: "{{ aap_hostname }}"
+            controller_oauthtoken: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
+            validate_certs: "{{ aap_validate_certs }}"
             name: Default
             galaxy_credentials:
               - "Automation Hub - certified"
@@ -94,10 +94,10 @@
             state: present
 
         - name: Create Eric Ames vault credential
-          ansible.platform.credential:
-            aap_hostname: "{{ aap_hostname }}"
-            aap_token: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
-            aap_validate_certs: "{{ aap_validate_certs }}"
+          ansible.controller.credential:
+            controller_host: "{{ aap_hostname }}"
+            controller_oauthtoken: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
+            validate_certs: "{{ aap_validate_certs }}"
             name: "Eric Ames"
             organization: Default
             credential_type: "Vault"
@@ -106,10 +106,10 @@
             state: present
 
         - name: Create aap.as.code project
-          ansible.platform.project:
-            aap_hostname: "{{ aap_hostname }}"
-            aap_token: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
-            aap_validate_certs: "{{ aap_validate_certs }}"
+          ansible.controller.project:
+            controller_host: "{{ aap_hostname }}"
+            controller_oauthtoken: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
+            validate_certs: "{{ aap_validate_certs }}"
             name: "aap.as.code"
             organization: Default
             scm_type: git
@@ -120,10 +120,10 @@
             state: present
 
         - name: Create Setup - AAP - CAC job template
-          ansible.platform.job_template:
-            aap_hostname: "{{ aap_hostname }}"
-            aap_token: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
-            aap_validate_certs: "{{ aap_validate_certs }}"
+          ansible.controller.job_template:
+            controller_host: "{{ aap_hostname }}"
+            controller_oauthtoken: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
+            validate_certs: "{{ aap_validate_certs }}"
             name: "Setup - AAP - CAC"
             organization: Default
             inventory: "Demo Inventory"

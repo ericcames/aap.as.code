@@ -109,6 +109,7 @@
         playbook: "playbooks/main.yml"
         credentials:
           - "Eric Ames"
+          - "AAP Credential"
         extra_vars:
           my_windows_catalog_short_description: "Ames AAP Windows AWS Daily Demo"
           my_vault: "Eric Ames"

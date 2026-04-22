@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- `playbooks/bootstrap_dev.yml` — refactored to be inventory-driven; all environment vars moved to `inventories/rhdp-<customer>-<demo>/group_vars/all.yml` (closes #152)
+- `playbooks/bootstrap_dev.yml` — changed `hosts: localhost` to `hosts: all` to support inventory targeting
+
+### Added
+- `inventories/rhdp-sample-demo/` — sample inventory template for new RHDP environments; copy and rename for each customer/demo combination
+
 ### Fixed
 - `playbooks/bootstrap_dev.yml` — changed `scm_branch` from hardcoded `ericames/productdemo` to `main` (fixes #150)
 

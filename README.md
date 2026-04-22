@@ -14,6 +14,25 @@ Looking for other Daily Demos?
 - [AAP Daily Demo hashicorp](https://github.com/ericcames/aap.dailydemo.hashicorp "AAP Daily Demo hashicorp") - ready
 - [Datacenter 1](https://github.com/ericcames/demo.datacenter "Datacenter 1") - ready<br>
 
+# Automated Bootstrap (Recommended)
+
+Use the Claude Code skills to bootstrap a fresh RHDP AAP instance automatically.
+
+**Install the skills once:**
+```bash
+claude plugins marketplace add ericcames/aap-skills
+claude plugins install aap-skills
+```
+
+| Skill | When to use |
+|-------|-------------|
+| `/aap-bootstrap` | Quietly bootstrap AAP before running a separate demo |
+| `/aap-setup-demo` | Bootstrap AAP and run the setup as a live demo story |
+
+Skills source: [github.com/ericcames/aap-skills](https://github.com/ericcames/aap-skills)
+
+---
+
 # Ansible Product Demos
 
 ![alt text](https://github.com/ericcames/aap.as.code/blob/main/images/redhatdemo.png "Catalog Item")

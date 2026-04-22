@@ -34,12 +34,18 @@ Your `~/.ansible/ansible.cfg` must have a valid Automation Hub token under
 
 ### Running the Bootstrap
 
+Each environment gets its own named inventory. Copy the sample and set env vars:
+
 ```bash
+cp -r inventories/rhdp-sample-demo/ inventories/rhdp-<customer>-<demo>/
 export CONTROLLER_HOST=<new AAP URL>
 export CONTROLLER_USERNAME=admin
 export CONTROLLER_PASSWORD=<new password>
-ansible-playbook playbooks/bootstrap_dev.yml
+ansible-playbook -i inventories/rhdp-<customer>-<demo>/ playbooks/bootstrap_dev.yml
 ```
+
+The inventory `group_vars/all.yml` resolves all sensitive values at runtime via
+env var and file lookups — no secrets are stored in the inventory.
 
 The playbook creates:
 - Automation Hub certified and validated credentials
@@ -56,12 +62,35 @@ The bootstrap token is automatically deleted when the playbook completes
 Once bootstrap completes, launch `Setup - AAP - CAC` from AAP to load all
 demo configurations via CaC.
 
+## Claude Code Skills
+
+Two skills automate the bootstrap workflow inside Claude Code. Install them once:
+
+```bash
+claude plugins marketplace add ericcames/aap-skills
+claude plugins install aap-skills
+```
+
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| aap-bootstrap | `/aap-bootstrap` | Collect credentials, generate inventory, run bootstrap — stops when AAP is ready |
+| aap-setup-demo | `/aap-setup-demo` | Everything above, then launches `Setup - AAP - CAC` as a live demo story |
+
+Skills are published at [github.com/ericcames/aap-skills](https://github.com/ericcames/aap-skills).
+Update to the latest version with:
+
+```bash
+claude plugins marketplace update aap-skills
+claude plugins update aap-skills@aap-skills
+```
+
 ## Key Files
 
 | File | Purpose |
 |------|---------|
-| `playbooks/bootstrap_dev.yml` | Automates Phase 1 AAP setup from localhost |
+| `playbooks/bootstrap_dev.yml` | Inventory-driven bootstrap playbook — run with `-i inventories/rhdp-<customer>-<demo>/` |
 | `playbooks/main.yml` | Main CaC setup playbook (runs inside AAP) |
+| `inventories/rhdp-sample-demo/` | Sample inventory template — copy for each new environment |
 | `docs/dev-environment.md` | Local dev credentials — gitignored, never commit |
 | `ROADMAP.md` | DC1 strategic roadmap and migration status |
 | `CHANGELOG.md` | Record of all changes — always update before committing |

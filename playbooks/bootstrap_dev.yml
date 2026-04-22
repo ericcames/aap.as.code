@@ -114,7 +114,7 @@
             organization: Default
             scm_type: git
             scm_url: "https://github.com/ericcames/aap.as.code.git"
-            scm_branch: ericames/productdemo
+            scm_branch: main
             scm_update_on_launch: true
             wait: true
             state: present

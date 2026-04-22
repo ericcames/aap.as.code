@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+- `CLAUDE.md` — updated bootstrap command to use `-i inventories/rhdp-<customer>-<demo>/`; added Claude Code Skills section with install instructions and skill reference (closes #154)
+- `CLAUDE.md` — updated Key Files table to include `inventories/rhdp-sample-demo/`
+- `README.md` — added Automated Bootstrap section referencing `/aap-bootstrap` and `/aap-setup-demo` skills
+
 ### Fixed
 - `playbooks/bootstrap_dev.yml` — changed `scm_branch` from hardcoded `ericames/productdemo` to `main` (fixes #150)
 

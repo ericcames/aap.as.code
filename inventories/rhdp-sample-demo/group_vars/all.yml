@@ -1,0 +1,26 @@
+---
+# RHDP environment: rhdp-sample-demo
+# Copy this inventory to inventories/rhdp-<customer>-<demo>/ for each environment.
+# No secrets are stored here — all sensitive values are resolved at runtime via lookups.
+#
+# Before running:
+#   export CONTROLLER_HOST=<aap url from rhdp services page>
+#   export CONTROLLER_USERNAME=admin
+#   export CONTROLLER_PASSWORD=<password from rhdp services page>
+#
+# Automation Hub token must be in ~/.ansible/ansible.cfg under [galaxy_server.rh_certified]
+# Vault password must be a single line in ~/.ansible/secrets2
+
+aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
+aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
+aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
+aap_validate_certs: false
+
+hub_token: "{{ lookup('ini', 'token section=galaxy_server.rh_certified file=~/.ansible/ansible.cfg') }}"
+vault_password: "{{ lookup('ansible.builtin.file', '~/.ansible/secrets2') | trim }}"
+hub_auth_url: "https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token"
+
+# Remote vault and SSH key — host these in a private repo and set the raw content URLs below.
+# Example: https://raw.githubusercontent.com/<your_org>/sourcefiles/main/vault_<your_name>.yml
+my_remote_vault: ""
+my_remote_ssh_pub_key: ""

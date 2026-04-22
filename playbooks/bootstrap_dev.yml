@@ -1,32 +1,9 @@
 ---
 - name: Bootstrap AAP Dev Environment
-  hosts: localhost
+  hosts: all
   gather_facts: false
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-    aap_hostname: "{{ lookup('ansible.builtin.env', 'CONTROLLER_HOST') }}"
-    aap_username: "{{ lookup('ansible.builtin.env', 'CONTROLLER_USERNAME') }}"
-    aap_password: "{{ lookup('ansible.builtin.env', 'CONTROLLER_PASSWORD') }}"
-    aap_validate_certs: false
-    # Automation Hub API token — obtain from Red Hat Console:
-    # console.redhat.com → Automation Hub → Connect to Hub → API token
-    # Store it in your local ansible.cfg under [galaxy_server.rh_certified] and
-    # [galaxy_server.rh_validated] as: token=<your_token>
-    # Example path: /home/<your_username>/.ansible/ansible.cfg
-    hub_token: "{{ lookup('ini', 'token section=galaxy_server.rh_certified file=~/.ansible/ansible.cfg') }}"
-    # Vault password — the default_password for your AAP vault credential.
-    # Store it as a single line of text in a local secrets file.
-    # Example path: /home/<your_username>/.ansible/secrets2
-    vault_password: "{{ lookup('ansible.builtin.file', '~/.ansible/secrets2') | trim }}"
-    hub_auth_url: "https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token"
-    # Remote vault URL — a raw URL to a YAML file containing your AAP secrets
-    # (default_passwd, ssh_priv_key, registry tokens, etc.).
-    # Host this file in a private repo and reference the raw content URL.
-    # Example: https://raw.githubusercontent.com/<your_org>/sourcefiles/main/vault_<your_name>.yml
-    my_remote_vault: "https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/vault_ames.yml"
-    # Remote SSH public key URL — raw URL to your id_rsa.pub hosted in the same private repo.
-    # Example: https://raw.githubusercontent.com/<your_org>/sourcefiles/main/id_rsa.pub
-    my_remote_ssh_pub_key: "https://raw.githubusercontent.com/ericcames/sourcefiles/refs/heads/main/id_rsa.pub"
+  # All variables are defined in inventories/rhdp-<customer>-<demo>/group_vars/all.yml
+  # Run with: ansible-playbook -i inventories/rhdp-<customer>-<demo>/ playbooks/bootstrap_dev.yml
 
   tasks:
 

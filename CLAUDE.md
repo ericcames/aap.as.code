@@ -20,17 +20,18 @@ Run `playbooks/bootstrap_dev.yml` first — it creates the prerequisites automat
 
 ### Prerequisites (one-time local setup)
 
-Install the required collections locally before running the playbook:
+Run `/aap-first-time` inside Claude Code to set these up interactively, or configure manually:
+
+- `~/.ansible/ansible.cfg` with a valid Automation Hub token under `[galaxy_server.rh_certified]`
+  - Get it from: `console.redhat.com → Automation Hub → Connect to Hub → API token`
+- `~/.ansible/secrets2` containing your vault password (single line)
+- Collections installed locally:
 
 ```bash
 ANSIBLE_CONFIG=~/.ansible/ansible.cfg \
   ansible-galaxy collection install ansible.platform ansible.controller \
   -p ./collections
 ```
-
-Your `~/.ansible/ansible.cfg` must have a valid Automation Hub token under
-`[galaxy_server.rh_certified]`. Obtain it from:
-`console.redhat.com → Automation Hub → Connect to Hub → API token`
 
 ### Running the Bootstrap
 
@@ -50,7 +51,7 @@ env var and file lookups — no secrets are stored in the inventory.
 The playbook creates:
 - Automation Hub certified and validated credentials
 - Galaxy credentials associated with the Default Organization
-- Eric Ames vault credential (reads password from `~/.ansible/secrets2`)
+- Vault credential (name varies by user — reads password from `~/.ansible/secrets2`)
 - `aap.as.code` project
 - `Setup - AAP - CAC` job template
 
@@ -64,7 +65,7 @@ demo configurations via CaC.
 
 ## Claude Code Skills
 
-Two skills automate the bootstrap workflow inside Claude Code. Install them once:
+Three skills automate the bootstrap workflow inside Claude Code. Install them once:
 
 ```bash
 claude plugins marketplace add ericcames/aap-skills
@@ -73,6 +74,7 @@ claude plugins install aap-skills
 
 | Skill | Command | Purpose |
 |-------|---------|---------|
+| aap-first-time | `/aap-first-time` | One-time local setup — walks through ansible.cfg, secrets2, collections, SSH key, and vault file interactively |
 | aap-bootstrap | `/aap-bootstrap` | Collect credentials, generate inventory, run bootstrap — stops when AAP is ready |
 | aap-setup-demo | `/aap-setup-demo` | Everything above, then launches `Setup - AAP - CAC` as a live demo story |
 

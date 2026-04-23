@@ -18,6 +18,12 @@ Looking for other Daily Demos?
 
 Use the Claude Code skills to bootstrap a fresh RHDP AAP instance automatically.
 
+**First time on a new machine? Run this first:**
+```
+/aap-first-time
+```
+It walks you through every prerequisite interactively. Already set up? Skip straight to `/aap-bootstrap`.
+
 **Install the skills once:**
 ```bash
 claude plugins marketplace add ericcames/aap-skills
@@ -26,6 +32,7 @@ claude plugins install aap-skills
 
 | Skill | When to use |
 |-------|-------------|
+| `/aap-first-time` | First time on a new machine — sets up ansible.cfg, secrets2, collections, SSH key, and vault file |
 | `/aap-bootstrap` | Quietly bootstrap AAP before running a separate demo |
 | `/aap-setup-demo` | Bootstrap AAP and run the setup as a live demo story |
 

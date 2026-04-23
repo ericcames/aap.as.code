@@ -5,6 +5,10 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
+### Changed
+- `README.md` — added "First time here?" section and `/aap-first-time` to skills table (closes #157)
+- `CLAUDE.md` — added `/aap-first-time` to skills table, updated "Two skills" to three, updated Prerequisites to point to `/aap-first-time`, fixed hardcoded vault credential name (closes #157)
+
 ### Added
 - `CLAUDE.md` — Claude-specific guidelines covering new AAP environment setup, bootstrap playbook usage, collection install steps, key files, and project conventions
 - `ROADMAP.md` — DC1 strategic roadmap capturing architecture layers, migration sequence, phase plan, known F5 issues, and related repos

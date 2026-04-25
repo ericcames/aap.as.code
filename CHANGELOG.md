@@ -14,6 +14,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Previous Unreleased
 
 ### Changed
+- `.gitignore` — exclude `collections/` from version control (installed dependencies)
+
+## Previous Unreleased
+
+### Changed
 - `README.md` — added "First time here?" section and `/aap-first-time` to skills table (closes #157)
 - `CLAUDE.md` — added `/aap-first-time` to skills table, updated "Two skills" to three, updated Prerequisites to point to `/aap-first-time`, fixed hardcoded vault credential name (closes #157)
 

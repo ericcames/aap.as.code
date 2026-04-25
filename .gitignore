@@ -6,3 +6,4 @@ env
 *.json
 .lock
 docs/dev-environment.md
+collections/

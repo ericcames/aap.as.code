@@ -70,12 +70,12 @@
               - "Automation Hub - validated"
             state: present
 
-        - name: Create Eric Ames vault credential
+        - name: Create vault credential
           ansible.controller.credential:
             controller_host: "{{ aap_hostname }}"
             controller_oauthtoken: "{{ bootstrap_token.ansible_facts.aap_token.token }}"
             validate_certs: "{{ aap_validate_certs }}"
-            name: "Eric Ames"
+            name: "{{ my_vault }}"
             organization: Default
             credential_type: "Vault"
             inputs:
@@ -107,11 +107,11 @@
             project: "aap.as.code"
             playbook: "playbooks/main.yml"
             credentials:
-              - "Eric Ames"
+              - "{{ my_vault }}"
               - "AAP Credential"
             extra_vars:
-              my_windows_catalog_short_description: "Ames AAP Windows AWS Daily Demo"
-              my_vault: "Eric Ames"
+              my_vault: "{{ my_vault }}"
+              my_windows_catalog_short_description: "{{ my_windows_catalog_short_description }}"
               my_remote_vault: "{{ my_remote_vault }}"
               my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
             ask_variables_on_launch: false

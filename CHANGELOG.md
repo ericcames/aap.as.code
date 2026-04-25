@@ -5,9 +5,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Unreleased
 
-### Added
-- `inventories/rhdp-acme-cac/` — inventory for acme CaC demo environment
-
 ### Changed
 - `.gitignore` — exclude `collections/` from version control (installed dependencies)
 

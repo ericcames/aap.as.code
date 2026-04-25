@@ -24,3 +24,10 @@ hub_auth_url: "https://sso.redhat.com/auth/realms/redhat-external/protocol/openi
 # Example: https://raw.githubusercontent.com/<your_org>/sourcefiles/main/vault_<your_name>.yml
 my_remote_vault: ""
 my_remote_ssh_pub_key: ""
+
+# Vault credential name — must match the credential name created in AAP and the my_vault extra var.
+# Set by running /aap-first-time.
+my_vault: ""
+
+# ServiceNow Windows catalog item short description. Override if needed.
+my_windows_catalog_short_description: "Ames AAP Windows AWS Daily Demo"

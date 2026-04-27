@@ -18,17 +18,34 @@ Looking for other Daily Demos?
 
 Use the Claude Code skills to bootstrap a fresh RHDP AAP instance automatically.
 
-**First time on a new machine? Run this first:**
+**Step 1 — Clone this repo and open it in Claude Code:**
+```bash
+git clone https://github.com/ericcames/aap.as.code.git
+cd aap.as.code
+claude
 ```
-/aap-first-time
-```
-It walks you through every prerequisite interactively. Already set up? Skip straight to `/aap-bootstrap`.
 
-**Install the skills once:**
+**Step 2 — Install (or upgrade) the aap-skills plugin:**
+
+Fresh install:
 ```bash
 claude plugins marketplace add ericcames/aap-skills
 claude plugins install aap-skills
 ```
+
+Already installed? Upgrade to the latest:
+```bash
+claude plugins marketplace update aap-skills
+claude plugins update aap-skills@aap-skills
+```
+
+> If Claude Code prompts you to restart after installing or upgrading, exit and re-run `claude` before continuing.
+
+**Step 3 — First time on a new machine? Run this inside Claude Code:**
+```
+/aap-first-time
+```
+It walks you through every prerequisite interactively. Already set up? Skip straight to `/aap-bootstrap`.
 
 | Skill | When to use |
 |-------|-------------|

@@ -10,6 +10,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 - `.gitignore` — exclude `collections/` from version control (installed dependencies)
+- `README.md` — expanded Automated Bootstrap section with clone step, Claude Code launch step, upgrade path (both commands), and restart notice (closes #165)
 
 ## Previous Unreleased
 
